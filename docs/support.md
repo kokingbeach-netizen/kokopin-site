@@ -122,13 +122,11 @@ A. 以下をお試しください。
 
 ## お問い合わせ
 
-上記のFAQで解決しない場合は、以下のメールアドレスまでお問い合わせください。
+KokoPinに関するご質問・ご要望・不具合報告は、下記メールアドレスまでご連絡ください。
 
-**メール：** kokingbeach@gmail.com
+[kokopin.app@gmail.com](mailto:kokopin.app@gmail.com)
 
 お問い合わせいただいた内容には、可能な限り対応いたします。
-
-※問い合わせフォームや [support@kokopin.app](mailto:support@kokopin.app) の本格運用は後日対応予定です。
 
 お問い合わせの際は、以下の情報をお知らせいただくとスムーズに対応できます。
 

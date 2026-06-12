@@ -22,7 +22,7 @@ KokoPin 公式サイトの開発履歴です。
 ### /support
 - 運営者情報（運営：KokoPin）を追加
 - FAQ 7件追加（データ保存先・外部送信・Siri・タイトル編集・位置修正・削除・オフライン）
-- お問い合わせ文言を更新（support@kokopin.app 予定）
+- お問い合わせ文言を更新（kokopin.app@gmail.com を公式窓口として掲載）
 
 ### /terms・/privacy
 - 「制定日：2026年6月12日」を追加
