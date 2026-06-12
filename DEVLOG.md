@@ -4,6 +4,23 @@ KokoPin 公式サイトの開発履歴です。
 
 ---
 
+## Ver1.2 — 2026-06-13
+
+**目的：** 運営者表記の統一・問い合わせ先の確定
+
+### 運営者表記統一（全ページ）
+- `KokiSato` → `KokoPin` に全置換
+- `当社` → `運営者` に全置換（terms / privacy / support）
+
+### フッター整理（全ページ共通）
+- 「運営：KokoPin」行を削除（リンク＋著作権表記のみに整理）
+
+### 問い合わせ先確定（/support）
+- `kokingbeach@gmail.com` / `support@kokopin.app` を削除
+- `kokopin.app@gmail.com` を公式サポート窓口として確定・掲載
+
+---
+
 ## Ver1.1 — 2026-06-12
 
 **目的：** App Store提出前の信頼感・説明力・サポート情報の強化
