@@ -1,48 +1,62 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
-  --kokopin-pink: #FF4D8D;
-  --kokopin-pink-light: #FF80AB;
-  --kokopin-pink-dark: #E0005A;
+  /* Brand colors */
+  --coral:       #FF5A6F;
+  --coral-dark:  #E04460;
+  --coral-light: #FF8096;
+  --coral-pale:  #FFF1F3;
+
+  --navy:        #18233F;
+  --navy-mid:    #2C3A5A;
+
+  --text-gray:   #7F8CA3;
+  --text-dark:   #2D3748;
+
+  --pale-bg:     #F7F9FC;
+  --border:      #E8ECF2;
+
+  --white:       #FFFFFF;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
+  background: var(--pale-bg);
+  color: var(--navy);
   font-family: -apple-system, BlinkMacSystemFont, "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+  -webkit-font-smoothing: antialiased;
 }
 
+/* ── Prose (利用規約・プライバシー・サポートページ用) ── */
 .prose h1 {
-  font-size: 1.75rem;
-  font-weight: 700;
-  margin-bottom: 1.5rem;
-  color: #111;
+  font-size: 1.6rem;
+  font-weight: 800;
+  margin-bottom: 1.25rem;
+  color: var(--navy);
+  letter-spacing: -0.02em;
 }
 
 .prose h2 {
-  font-size: 1.25rem;
-  font-weight: 600;
+  font-size: 1.1rem;
+  font-weight: 700;
   margin-top: 2rem;
-  margin-bottom: 0.75rem;
-  color: #222;
-  border-bottom: 1px solid #f0f0f0;
-  padding-bottom: 0.5rem;
+  margin-bottom: 0.6rem;
+  color: var(--navy);
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 0.4rem;
 }
 
 .prose h3 {
-  font-size: 1rem;
+  font-size: 0.95rem;
   font-weight: 600;
   margin-top: 1.25rem;
-  margin-bottom: 0.5rem;
-  color: #333;
+  margin-bottom: 0.4rem;
+  color: var(--text-dark);
 }
 
 .prose p {
   margin-bottom: 1rem;
-  line-height: 1.8;
-  color: #444;
+  line-height: 1.85;
+  color: var(--text-gray);
 }
 
 .prose ul {
@@ -59,23 +73,23 @@ body {
 
 .prose li {
   margin-bottom: 0.4rem;
-  line-height: 1.7;
-  color: #444;
+  line-height: 1.75;
+  color: var(--text-gray);
 }
 
 .prose strong {
-  font-weight: 600;
-  color: #222;
+  font-weight: 700;
+  color: var(--navy);
 }
 
 .prose a {
-  color: var(--kokopin-pink);
+  color: var(--coral);
   text-decoration: underline;
 }
 
 .prose hr {
   border: none;
-  border-top: 1px solid #eee;
+  border-top: 1px solid var(--border);
   margin: 2rem 0;
 }
 
@@ -83,26 +97,27 @@ body {
   width: 100%;
   border-collapse: collapse;
   margin-bottom: 1.5rem;
-  font-size: 0.9rem;
+  font-size: 0.875rem;
 }
 
 .prose th {
-  background: #fafafa;
+  background: var(--pale-bg);
   padding: 0.6rem 1rem;
   text-align: left;
   font-weight: 600;
-  border: 1px solid #e5e5e5;
+  border: 1px solid var(--border);
+  color: var(--navy);
 }
 
 .prose td {
   padding: 0.6rem 1rem;
-  border: 1px solid #e5e5e5;
-  color: #444;
+  border: 1px solid var(--border);
+  color: var(--text-gray);
 }
 
 .prose blockquote {
-  border-left: 3px solid var(--kokopin-pink);
+  border-left: 3px solid var(--coral);
   padding-left: 1rem;
-  color: #666;
+  color: var(--text-gray);
   margin: 1rem 0;
 }
