@@ -1,32 +1,43 @@
 @import "tailwindcss";
 
 :root {
-  /* Brand colors */
-  --coral:       #FF5A6F;
-  --coral-dark:  #E04460;
-  --coral-light: #FF8096;
-  --coral-pale:  #FFF1F3;
+  --coral:      #FF5A6F;
+  --coral-dark: #E04460;
+  --coral-pale: #FFF1F3;
 
-  --navy:        #18233F;
-  --navy-mid:    #2C3A5A;
+  --navy:       #18233F;
+  --navy-mid:   #2C3A5A;
 
-  --text-gray:   #7F8CA3;
-  --text-dark:   #2D3748;
+  --text-gray:  #7F8CA3;
+  --text-dark:  #2D3748;
 
-  --pale-bg:     #F7F9FC;
-  --border:      #E8ECF2;
+  --pale-bg:    #F7F9FC;
+  --border:     #E8ECF2;
+  --white:      #FFFFFF;
+}
 
-  --white:       #FFFFFF;
+html {
+  scroll-behavior: smooth;
 }
 
 body {
-  background: var(--pale-bg);
+  background-color: var(--pale-bg);
   color: var(--navy);
-  font-family: -apple-system, BlinkMacSystemFont, "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, "Hiragino Sans",
+    "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
   -webkit-font-smoothing: antialiased;
 }
 
-/* ── Prose (利用規約・プライバシー・サポートページ用) ── */
+/* スクロールバー非表示 */
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+/* ── Prose（利用規約・プライバシー・サポート） ── */
 .prose h1 {
   font-size: 1.6rem;
   font-weight: 800;
@@ -34,7 +45,6 @@ body {
   color: var(--navy);
   letter-spacing: -0.02em;
 }
-
 .prose h2 {
   font-size: 1.1rem;
   font-weight: 700;
@@ -44,7 +54,6 @@ body {
   border-bottom: 1px solid var(--border);
   padding-bottom: 0.4rem;
 }
-
 .prose h3 {
   font-size: 0.95rem;
   font-weight: 600;
@@ -52,54 +61,45 @@ body {
   margin-bottom: 0.4rem;
   color: var(--text-dark);
 }
-
 .prose p {
   margin-bottom: 1rem;
   line-height: 1.85;
   color: var(--text-gray);
 }
-
 .prose ul {
   list-style: disc;
   padding-left: 1.5rem;
   margin-bottom: 1rem;
 }
-
 .prose ol {
   list-style: decimal;
   padding-left: 1.5rem;
   margin-bottom: 1rem;
 }
-
 .prose li {
   margin-bottom: 0.4rem;
   line-height: 1.75;
   color: var(--text-gray);
 }
-
 .prose strong {
   font-weight: 700;
   color: var(--navy);
 }
-
 .prose a {
   color: var(--coral);
   text-decoration: underline;
 }
-
 .prose hr {
   border: none;
   border-top: 1px solid var(--border);
   margin: 2rem 0;
 }
-
 .prose table {
   width: 100%;
   border-collapse: collapse;
   margin-bottom: 1.5rem;
   font-size: 0.875rem;
 }
-
 .prose th {
   background: var(--pale-bg);
   padding: 0.6rem 1rem;
@@ -108,13 +108,11 @@ body {
   border: 1px solid var(--border);
   color: var(--navy);
 }
-
 .prose td {
   padding: 0.6rem 1rem;
   border: 1px solid var(--border);
   color: var(--text-gray);
 }
-
 .prose blockquote {
   border-left: 3px solid var(--coral);
   padding-left: 1rem;
