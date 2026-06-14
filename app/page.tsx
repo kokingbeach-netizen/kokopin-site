@@ -186,12 +186,14 @@ function LeftSidebar() {
             priority
           />
         </div>
-        <div>
-          <p className="text-3xl font-black tracking-tighter text-white drop-shadow">
-            KokoPin
-          </p>
-          <p className="text-sm font-bold text-white/70 mt-0.5">ここピン</p>
-        </div>
+        <Image
+          src="/images/title-text.png"
+          alt="ここピン!"
+          width={2048}
+          height={411}
+          className="w-40 h-auto drop-shadow"
+          style={{ filter: "brightness(0) invert(1)" }}
+        />
         <p className="text-sm font-bold text-white/90 leading-relaxed">
           声でMAPに
           <br />
