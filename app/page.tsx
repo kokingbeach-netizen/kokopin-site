@@ -332,16 +332,18 @@ export default function Home() {
 
           <div className="w-full max-w-2xl mx-auto px-5 sm:px-10 pt-10 space-y-7">
 
+            {/* モバイルのみロゴ表示 */}
+            <div className="lg:hidden w-16 h-16 rounded-[18px] overflow-hidden shadow-md mx-auto">
+              <Image src="/images/app-icon.png" alt="KokoPin" width={64} height={64} className="object-cover w-full h-full" priority />
+            </div>
+
             {/* アプリ名 + バッジ */}
-            <div className="space-y-3">
-              <Image
-                src="/images/title-logo.png"
-                alt="ここピン!"
-                width={220}
-                height={220}
-                className="mx-auto w-44 sm:w-56 h-auto"
-                priority
-              />
+            <div className="space-y-2">
+              <h1 className="text-5xl sm:text-6xl font-black tracking-tighter leading-none"
+                style={{ color: "var(--navy)" }}>
+                KokoPin
+              </h1>
+              <p className="text-sm font-medium" style={{ color: "var(--text-gray)" }}>ここピン</p>
               <span
                 className="inline-block text-xs font-bold px-4 py-1.5 rounded-full text-white mt-1"
                 style={{ backgroundColor: "var(--coral)" }}
