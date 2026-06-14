@@ -23,7 +23,6 @@ function ImagePlaceholder({
         border: "2px dashed #FFCCD3",
       }}
     >
-      {/* グロー装飾 */}
       <div
         className="absolute -top-12 -right-12 w-48 h-48 rounded-full pointer-events-none"
         style={{
@@ -38,14 +37,12 @@ function ImagePlaceholder({
             "radial-gradient(circle, rgba(255,107,90,0.2) 0%, transparent 70%)",
         }}
       />
-      {/* アイコン装飾 */}
       <div className="absolute top-4 right-5 text-5xl opacity-10 rotate-12 select-none pointer-events-none">
         📍
       </div>
       <div className="absolute bottom-4 left-5 text-4xl opacity-10 -rotate-6 select-none pointer-events-none">
         🎙️
       </div>
-      {/* ラベル */}
       <div className="absolute inset-0 flex flex-col items-center justify-center gap-2 p-4 text-center">
         <span className="text-4xl">📍</span>
         <p className="text-sm font-bold" style={{ color: "var(--coral)" }}>
@@ -142,49 +139,29 @@ function LeftSidebar() {
           "linear-gradient(160deg, #FF5A6F 0%, #FF7A5E 60%, #FFAD7A 100%)",
       }}
     >
-      {/* グロー円 */}
       <div
         className="absolute -top-20 -left-20 w-72 h-72 rounded-full pointer-events-none"
-        style={{
-          background:
-            "radial-gradient(circle, rgba(255,255,255,0.38) 0%, transparent 65%)",
-        }}
+        style={{ background: "radial-gradient(circle, rgba(255,255,255,0.38) 0%, transparent 65%)" }}
       />
       <div
         className="absolute bottom-[-30px] right-[-60px] w-60 h-60 rounded-full pointer-events-none"
-        style={{
-          background:
-            "radial-gradient(circle, rgba(255,255,255,0.22) 0%, transparent 65%)",
-        }}
+        style={{ background: "radial-gradient(circle, rgba(255,255,255,0.22) 0%, transparent 65%)" }}
       />
       <div
         className="absolute top-[42%] left-[5px] w-32 h-32 rounded-full pointer-events-none"
-        style={{
-          background:
-            "radial-gradient(circle, rgba(255,255,255,0.16) 0%, transparent 70%)",
-        }}
+        style={{ background: "radial-gradient(circle, rgba(255,255,255,0.16) 0%, transparent 70%)" }}
       />
-      {/* ドットパターン */}
       <div
         className="absolute inset-0 pointer-events-none"
         style={{
-          backgroundImage:
-            "radial-gradient(circle, rgba(255,255,255,0.85) 1.5px, transparent 1.5px)",
+          backgroundImage: "radial-gradient(circle, rgba(255,255,255,0.85) 1.5px, transparent 1.5px)",
           backgroundSize: "28px 28px",
           opacity: 0.12,
         }}
       />
-      {/* コンテンツ */}
       <div className="relative z-10 flex flex-col items-center text-center px-8 gap-7">
         <div className="w-20 h-20 rounded-[20px] overflow-hidden shadow-lg">
-          <Image
-            src="/images/app-icon.png"
-            alt="KokoPin"
-            width={80}
-            height={80}
-            className="object-cover w-full h-full"
-            priority
-          />
+          <Image src="/images/app-icon.png" alt="KokoPin" width={80} height={80} className="object-cover w-full h-full" priority />
         </div>
         <Image
           src="/images/title-text.png"
@@ -195,9 +172,7 @@ function LeftSidebar() {
           style={{ filter: "brightness(0) invert(1)" }}
         />
         <p className="text-sm font-bold text-white/90 leading-relaxed">
-          声でMAPに
-          <br />
-          ピンしよう
+          声でMAPに<br />ピンしよう
         </p>
         <div className="flex gap-4 text-2xl drop-shadow">
           <span title="Siri">🎙️</span>
@@ -218,28 +193,22 @@ function LeftSidebar() {
 // ── 右サイドバー（PCのみ表示） ─────────────────────────────────────────────────
 function RightSidebar() {
   const navLinks = [
-    { href: "#hero",       label: "TOP" },
-    { href: "#scenes",     label: "使えるシーン" },
-    { href: "#how-to",     label: "使い方" },
-    { href: "#app-screens",label: "アプリ画面" },
-    { href: "#privacy",    label: "プライバシー" },
-    { href: "#price",      label: "料金" },
-    { href: "#faq",        label: "FAQ" },
+    { href: "#hero",        label: "TOP" },
+    { href: "#scenes",      label: "使えるシーン" },
+    { href: "#how-to",      label: "使い方" },
+    { href: "#app-screens", label: "アプリ画面" },
+    { href: "#privacy",     label: "プライバシー" },
+    { href: "#price",       label: "料金" },
+    { href: "#faq",         label: "FAQ" },
   ];
 
   return (
     <aside
       className="hidden lg:flex fixed right-0 top-0 w-[240px] h-screen flex-col justify-between py-8 px-5 overflow-y-auto z-40"
-      style={{
-        backgroundColor: "var(--white)",
-        borderLeft: "1px solid var(--border)",
-      }}
+      style={{ backgroundColor: "var(--white)", borderLeft: "1px solid var(--border)" }}
     >
       <nav className="flex flex-col gap-0.5">
-        <p
-          className="text-xs font-black tracking-widest uppercase mb-4"
-          style={{ color: "var(--text-gray)" }}
-        >
+        <p className="text-xs font-black tracking-widest uppercase mb-4" style={{ color: "var(--text-gray)" }}>
           MENU
         </p>
         {navLinks.map((link) => (
@@ -259,9 +228,7 @@ function RightSidebar() {
           style={{ backgroundColor: "#F0F2F5", border: "2px dashed var(--border)" }}
           aria-disabled="true"
         >
-          <span className="text-xs font-bold" style={{ color: "#B0BAC9" }}>
-            App Storeでダウンロード
-          </span>
+          <span className="text-xs font-bold" style={{ color: "#B0BAC9" }}>App Storeでダウンロード</span>
           <span className="text-xs" style={{ color: "#B0BAC9" }}>近日公開予定</span>
         </div>
         <div className="flex justify-center gap-4 text-xs" style={{ color: "var(--text-gray)" }}>
@@ -288,22 +255,11 @@ export default function Home() {
         <div className="px-5 h-14 flex items-center justify-between">
           <div className="flex items-center gap-2">
             <div className="w-8 h-8 rounded-xl overflow-hidden">
-              <Image
-                src="/images/app-icon.png"
-                alt="KokoPin"
-                width={32}
-                height={32}
-                className="object-cover w-full h-full"
-              />
+              <Image src="/images/app-icon.png" alt="KokoPin" width={32} height={32} className="object-cover w-full h-full" />
             </div>
-            <span className="text-base font-black tracking-tight" style={{ color: "var(--coral)" }}>
-              KokoPin
-            </span>
+            <span className="text-base font-black tracking-tight" style={{ color: "var(--coral)" }}>KokoPin</span>
           </div>
-          <span
-            className="text-xs font-bold px-3 py-1 rounded-full text-white"
-            style={{ backgroundColor: "var(--coral)" }}
-          >
+          <span className="text-xs font-bold px-3 py-1 rounded-full text-white" style={{ backgroundColor: "var(--coral)" }}>
             近日公開予定
           </span>
         </div>
@@ -317,135 +273,181 @@ export default function Home() {
         ───────────────────────────────────────────── */}
         <section
           id="hero"
-          className="bg-white pb-14 flex flex-col items-center text-center"
-          style={{ borderBottom: "1px solid var(--border)" }}
+          className="relative overflow-hidden"
+          style={{
+            backgroundColor: "#EEF4FF",
+            backgroundImage: "url('/images/hero-map-bg.png')",
+            backgroundSize: "cover",
+            backgroundPosition: "center",
+          }}
         >
-          {/* ── ヒーロー画像（最上部・全幅） ── */}
-          <div className="w-full overflow-hidden" style={{ borderBottom: "1px solid var(--border)" }}>
-            <Image
-              src="/images/hero-drive.png"
-              alt="運転中にHey Siriここピンと話すシーン"
-              width={1200}
-              height={675}
-              className="w-full h-auto object-cover"
-              priority
-            />
+          {/* 白グラデーションオーバーレイ（モバイルは強め） */}
+          <div
+            className="absolute inset-0 pointer-events-none"
+            style={{
+              background: "linear-gradient(135deg, rgba(255,255,255,0.95) 0%, rgba(255,255,255,0.85) 50%, rgba(255,255,255,0.65) 100%)",
+            }}
+          />
+
+          {/* 大きな赤いピン（右奥装飾） */}
+          <div
+            className="absolute -right-10 -top-8 pointer-events-none select-none"
+            style={{ fontSize: "300px", lineHeight: 1, opacity: 0.07, transform: "rotate(12deg)", color: "var(--coral)" }}
+            aria-hidden="true"
+          >
+            📍
+          </div>
+          <div
+            className="absolute right-8 bottom-32 pointer-events-none select-none hidden lg:block"
+            style={{ fontSize: "72px", opacity: 0.06, transform: "rotate(-10deg)", color: "var(--coral)" }}
+            aria-hidden="true"
+          >
+            📍
           </div>
 
-          <div className="w-full max-w-2xl mx-auto px-5 sm:px-10 pt-10 space-y-7">
+          {/* ── メインコンテンツ ── */}
+          <div className="relative z-10 px-6 sm:px-10 lg:px-12 pt-10 lg:pt-14 pb-8">
+            <div className="flex flex-col lg:flex-row items-center gap-8 lg:gap-6">
 
-            {/* モバイルのみロゴ表示 */}
-            <div className="lg:hidden w-40 h-40 rounded-[45px] overflow-hidden shadow-md mx-auto">
-              <Image src="/images/app-icon.png" alt="KokoPin" width={160} height={160} className="object-cover w-full h-full" priority />
-            </div>
+              {/* ── 左列：テキスト・CTA ── */}
+              <div className="flex flex-col items-center lg:items-start text-center lg:text-left gap-5 lg:flex-1">
 
-            {/* アプリ名 + バッジ */}
-            <div className="space-y-2">
-              <h1 className="sr-only">ここピン!</h1>
-              <Image
-                src="/images/title-text.png"
-                alt="ここピン!"
-                width={2048}
-                height={411}
-                className="mx-auto w-56 sm:w-72 h-auto"
-                priority
-              />
-              <span
-                className="inline-block text-xs font-bold px-4 py-1.5 rounded-full text-white mt-1"
-                style={{ backgroundColor: "var(--coral)" }}
-              >
-                iOS版 近日公開予定
-              </span>
-            </div>
+                {/* ロゴ（モバイル：大 / PC：小） */}
+                <div className="lg:hidden w-40 h-40 rounded-[45px] overflow-hidden shadow-xl">
+                  <Image src="/images/app-icon.png" alt="KokoPin" width={160} height={160} className="object-cover w-full h-full" priority />
+                </div>
+                <div className="hidden lg:block w-[72px] h-[72px] rounded-[18px] overflow-hidden shadow-lg">
+                  <Image src="/images/app-icon.png" alt="KokoPin" width={72} height={72} className="object-cover w-full h-full" priority />
+                </div>
 
-            {/* iPhoneモックアップ + コピー（PC：横並び / モバイル：縦） */}
-            <div className="flex flex-col sm:flex-row items-center gap-8 sm:gap-10">
-              {/* iPhoneモックアップ */}
-              <div className="flex-shrink-0">
-                <IPhoneMockup id="hero-app-screen" label="KokoPinアプリ画面" size="lg" image="/images/screen-home.png" />
-              </div>
-              {/* コピー */}
-              <div className="space-y-4 text-center sm:text-left">
-                <p className="text-lg sm:text-xl font-bold leading-snug" style={{ color: "var(--navy)" }}>
-                  運転中、気になった場所があったら
-                </p>
-                <p className="text-2xl sm:text-3xl font-black tracking-tight leading-tight"
-                  style={{ color: "var(--coral)" }}>
-                  「Hey Siri ここピン」
-                </p>
-                <p className="text-lg sm:text-xl font-black" style={{ color: "var(--navy)" }}>
-                  声でMAPにピンしよう
-                </p>
-                <p className="text-sm" style={{ color: "var(--text-gray)" }}>
-                  気になった場所を、あとで行ける場所に。
-                </p>
-              </div>
-            </div>
+                {/* ここピン! ロゴテキスト */}
+                <div>
+                  <h1 className="sr-only">ここピン! — 声でMAPにピンしよう</h1>
+                  <Image
+                    src="/images/title-text.png"
+                    alt="ここピン!"
+                    width={2048}
+                    height={411}
+                    className="w-52 sm:w-64 lg:w-72 h-auto"
+                    priority
+                  />
+                  <p className="text-sm font-bold mt-1" style={{ color: "var(--text-gray)" }}>KokoPin</p>
+                </div>
 
-            {/* アプリバッジ */}
-            <div className="flex flex-wrap gap-2 justify-center">
-              {[
-                { icon: "📱", label: "iPhoneアプリ" },
-                { icon: "🎙️", label: "Siri対応" },
-                { icon: "🍎", label: "Apple Maps対応" },
-                { icon: "🗺️", label: "Google Maps対応" },
-              ].map((badge) => (
+                {/* iOS版バッジ */}
                 <span
-                  key={badge.label}
-                  className="flex items-center gap-1.5 text-xs font-bold px-3 py-1.5 rounded-full"
+                  className="inline-block text-xs font-bold px-4 py-1.5 rounded-full text-white"
+                  style={{ backgroundColor: "var(--coral)" }}
+                >
+                  iOS版 近日公開予定
+                </span>
+
+                {/* メインコピー */}
+                <div className="space-y-2">
+                  <p className="text-base sm:text-lg font-bold leading-snug" style={{ color: "var(--navy)" }}>
+                    運転中、気になった場所があったら
+                  </p>
+                  <p
+                    className="text-3xl sm:text-4xl font-black tracking-tight leading-tight"
+                    style={{ color: "var(--coral)" }}
+                  >
+                    「Hey Siri ここピン」
+                  </p>
+                  <p className="text-xl font-black" style={{ color: "var(--navy)" }}>
+                    声でMAPにピンしよう
+                  </p>
+                  <p className="text-sm" style={{ color: "var(--text-gray)" }}>
+                    気になった場所を、あとで行ける場所に。
+                  </p>
+                </div>
+
+                {/* バッジ行（プラットフォームカード） */}
+                <div className="flex flex-wrap gap-2 justify-center lg:justify-start">
+                  {[
+                    { icon: "🎙️", label: "Siri対応" },
+                    { icon: "🍎", label: "Apple Maps対応" },
+                    { icon: "🗺️", label: "Google Maps対応" },
+                    { icon: "📱", label: "iPhoneアプリ" },
+                  ].map((badge) => (
+                    <div
+                      key={badge.label}
+                      className="flex items-center gap-2 px-4 py-2.5 rounded-2xl"
+                      style={{
+                        backgroundColor: "rgba(255,255,255,0.92)",
+                        border: "1px solid var(--border)",
+                        boxShadow: "0 2px 8px rgba(0,0,0,0.06)",
+                      }}
+                    >
+                      <span className="text-lg">{badge.icon}</span>
+                      <span className="text-xs font-bold" style={{ color: "var(--navy)" }}>{badge.label}</span>
+                    </div>
+                  ))}
+                </div>
+
+                {/* App Storeボタン（ネイビー） */}
+                <div
+                  className="inline-flex items-center gap-4 px-6 py-4 rounded-2xl cursor-not-allowed select-none"
+                  style={{ backgroundColor: "var(--navy)", opacity: 0.55 }}
+                  aria-disabled="true"
+                >
+                  <span className="text-3xl text-white">🍎</span>
+                  <div>
+                    <p className="text-xs font-medium text-white/70">近日公開予定</p>
+                    <p className="text-base font-black text-white">App Store</p>
+                  </div>
+                </div>
+              </div>
+
+              {/* ── 右列：iPhoneモックアップ ── */}
+              <div className="flex-shrink-0 flex justify-center lg:justify-end">
+                <div
+                  className="drop-shadow-2xl"
+                  style={{ transform: "rotate(6deg) translateY(12px)" }}
+                >
+                  <IPhoneMockup
+                    id="hero-app-screen"
+                    label="KokoPinアプリ画面"
+                    size="lg"
+                    image="/images/screen-home.png"
+                  />
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+          {/* ── 4つの特徴カード ── */}
+          <div
+            className="relative z-10 px-6 sm:px-10 lg:px-12 pb-10 mt-6"
+            style={{ borderTop: "1px solid rgba(232,236,242,0.7)" }}
+          >
+            <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 pt-6">
+              {[
+                { icon: "🎙️", color: "var(--coral)", title: "声だけで保存",   desc: "Siriに話しかけるだけで位置とメモを保存" },
+                { icon: "📍",  color: "#FF3B30",     title: "場所を記録",     desc: "気になった場所をしっかり記録" },
+                { icon: "🗺️", color: "#34C759",     title: "地図で確認",     desc: "Apple MapsやGoogle Mapsで開ける" },
+                { icon: "🔍",  color: "#FF9500",     title: "あとで見返せる", desc: "行きたい時にすぐに見返せる" },
+              ].map((card) => (
+                <div
+                  key={card.title}
+                  className="flex flex-col gap-2 rounded-[20px] p-4"
                   style={{
-                    backgroundColor: "var(--pale-bg)",
+                    backgroundColor: "rgba(255,255,255,0.92)",
                     border: "1px solid var(--border)",
-                    color: "var(--navy)",
+                    boxShadow: "0 2px 12px rgba(0,0,0,0.06)",
                   }}
                 >
-                  {badge.icon} {badge.label}
-                </span>
+                  <span className="text-2xl">{card.icon}</span>
+                  <p className="text-xs font-black" style={{ color: "var(--navy)" }}>{card.title}</p>
+                  <p className="text-xs leading-snug" style={{ color: "var(--text-gray)" }}>{card.desc}</p>
+                </div>
               ))}
             </div>
-
-            {/* App Storeボタン（モバイルのみ・PCは右サイドバー） */}
-            <div
-              className="lg:hidden flex flex-col items-center gap-1 py-5 rounded-2xl cursor-not-allowed select-none"
-              style={{ backgroundColor: "#F0F2F5", border: "2px dashed var(--border)" }}
-              aria-disabled="true"
-            >
-              <span className="text-sm font-bold" style={{ color: "#B0BAC9" }}>App Storeでダウンロード</span>
-              <span className="text-xs" style={{ color: "#B0BAC9" }}>近日公開予定</span>
-            </div>
           </div>
         </section>
 
         {/* ─────────────────────────────────────────────
-            SECTION 2 : アプリ画面（ヒーロー直後）
-        ───────────────────────────────────────────── */}
-        <section
-          id="app-screens"
-          className="px-5 sm:px-10 py-14"
-          style={{ backgroundColor: "var(--pale-bg)" }}
-        >
-          <div className="max-w-2xl mx-auto space-y-8">
-            <div className="text-center space-y-1">
-              <h2 className="text-2xl sm:text-3xl font-black tracking-tight" style={{ color: "var(--navy)" }}>
-                アプリ画面
-              </h2>
-              <p className="text-sm" style={{ color: "var(--text-gray)" }}>
-                スクリーンショット順次公開予定
-              </p>
-            </div>
-            <div className="flex justify-center gap-4 sm:gap-8">
-              <IPhoneMockup id="screen-list-visual"   label="一覧画面"  size="md" />
-              <IPhoneMockup id="screen-detail-visual" label="詳細画面"  size="md" />
-              <IPhoneMockup id="screen-map-visual"    label="地図画面"  size="md" />
-            </div>
-            <p className="text-center text-xs" style={{ color: "var(--text-gray)" }}>
-              一覧画面・詳細画面・地図画面
-            </p>
-          </div>
-        </section>
-
-        {/* ─────────────────────────────────────────────
-            SECTION 3 : こんな時に使える
+            SECTION 2 : こんな時に使える
         ───────────────────────────────────────────── */}
         <section
           id="scenes"
@@ -476,8 +478,10 @@ export default function Home() {
                   }}
                 >
                   <span className="text-3xl">{item.icon}</span>
-                  <span className="text-xs font-bold leading-tight whitespace-pre-line"
-                    style={{ color: "var(--navy)" }}>
+                  <span
+                    className="text-xs font-bold leading-tight whitespace-pre-line"
+                    style={{ color: "var(--navy)" }}
+                  >
                     {item.label}
                   </span>
                 </div>
@@ -494,17 +498,11 @@ export default function Home() {
           style={{ backgroundColor: "var(--navy)" }}
         >
           <div className="max-w-2xl mx-auto space-y-10">
-            <ImagePlaceholder
-              id="moving-scene-visual"
-              label="ここに移動中の景色画像"
-              aspect="16/9"
-            />
+            <ImagePlaceholder id="moving-scene-visual" label="ここに移動中の景色画像" aspect="16/9" />
             <div className="space-y-5 text-center">
               <p className="text-lg sm:text-xl font-bold leading-relaxed text-white/80">
-                スマホが使えない、手が離せない時、
-                <br />
-                流れる景色の中で、
-                <br />
+                スマホが使えない、手が離せない時、<br />
+                流れる景色の中で、<br />
                 気になる店や景色を見つけたことありますよね？
               </p>
               <p className="text-2xl sm:text-3xl font-black tracking-tight" style={{ color: "var(--coral)" }}>
@@ -517,10 +515,7 @@ export default function Home() {
         {/* ─────────────────────────────────────────────
             SECTION 4 : 使い方（4ステップ）
         ───────────────────────────────────────────── */}
-        <section
-          id="how-to"
-          className="px-5 sm:px-10 py-14 bg-white"
-        >
+        <section id="how-to" className="px-5 sm:px-10 py-14 bg-white">
           <div className="max-w-2xl mx-auto space-y-6">
             <h2 className="text-2xl sm:text-3xl font-black tracking-tight" style={{ color: "var(--navy)" }}>
               使い方
@@ -573,17 +568,15 @@ export default function Home() {
         </section>
 
         {/* ─────────────────────────────────────────────
-            SECTION 6 : アプリ画面紹介（4画面）
+            SECTION 5 : アプリ画面紹介（4画面）
         ───────────────────────────────────────────── */}
-        <section className="px-5 sm:px-10 py-14 bg-white">
+        <section id="app-screens" className="px-5 sm:px-10 py-14 bg-white">
           <div className="max-w-2xl mx-auto space-y-8">
             <div className="text-center space-y-1">
               <h2 className="text-2xl sm:text-3xl font-black tracking-tight" style={{ color: "var(--navy)" }}>
                 アプリ画面紹介
               </h2>
-              <p className="text-sm" style={{ color: "var(--text-gray)" }}>
-                スクリーンショットは順次公開予定
-              </p>
+              <p className="text-sm" style={{ color: "var(--text-gray)" }}>スクリーンショットは順次公開予定</p>
             </div>
             <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 sm:gap-5">
               {[
@@ -595,12 +588,8 @@ export default function Home() {
                 <div key={screen.id} className="flex flex-col items-center gap-3">
                   <IPhoneMockup id={screen.id} label={screen.label} size="sm" />
                   <div className="text-center space-y-0.5">
-                    <p className="text-xs font-black" style={{ color: "var(--navy)" }}>
-                      {screen.label}
-                    </p>
-                    <p className="text-xs leading-snug" style={{ color: "var(--text-gray)" }}>
-                      {screen.desc}
-                    </p>
+                    <p className="text-xs font-black" style={{ color: "var(--navy)" }}>{screen.label}</p>
+                    <p className="text-xs leading-snug" style={{ color: "var(--text-gray)" }}>{screen.desc}</p>
                   </div>
                 </div>
               ))}
@@ -609,7 +598,7 @@ export default function Home() {
         </section>
 
         {/* ─────────────────────────────────────────────
-            SECTION 7 : プライバシー
+            SECTION 6 : プライバシー
         ───────────────────────────────────────────── */}
         <section
           id="privacy"
@@ -647,16 +636,13 @@ export default function Home() {
         </section>
 
         {/* ─────────────────────────────────────────────
-            SECTION 8 : 料金
+            SECTION 7 : 料金
         ───────────────────────────────────────────── */}
         <section id="price" className="px-5 sm:px-10 py-14 bg-white">
           <div className="max-w-2xl mx-auto">
             <div
               className="rounded-[28px] p-8 space-y-5"
-              style={{
-                border: "1px solid var(--border)",
-                boxShadow: "0 4px 20px rgba(0,0,0,0.04)",
-              }}
+              style={{ border: "1px solid var(--border)", boxShadow: "0 4px 20px rgba(0,0,0,0.04)" }}
             >
               <h2 className="text-xl font-black" style={{ color: "var(--navy)" }}>料金</h2>
               <div>
@@ -688,16 +674,13 @@ export default function Home() {
         </section>
 
         {/* ─────────────────────────────────────────────
-            SECTION 9 : 安全上の注意
+            SECTION 8 : 安全上の注意
         ───────────────────────────────────────────── */}
         <section className="px-5 sm:px-10 py-14" style={{ backgroundColor: "var(--pale-bg)" }}>
           <div className="max-w-2xl mx-auto">
             <div
               className="rounded-[28px] p-8 space-y-4"
-              style={{
-                backgroundColor: "var(--white)",
-                border: "1px solid var(--border)",
-              }}
+              style={{ backgroundColor: "var(--white)", border: "1px solid var(--border)" }}
             >
               <div className="flex items-center gap-2">
                 <span className="text-xl">⚠️</span>
@@ -717,7 +700,7 @@ export default function Home() {
         </section>
 
         {/* ─────────────────────────────────────────────
-            SECTION 10 : FAQ
+            SECTION 9 : FAQ
         ───────────────────────────────────────────── */}
         <section id="faq" className="px-5 sm:px-10 py-14 bg-white">
           <div className="max-w-2xl mx-auto space-y-5">
