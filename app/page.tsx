@@ -164,14 +164,13 @@ function LeftSidebar() {
       />
       {/* コンテンツ */}
       <div className="relative z-10 flex flex-col items-center text-center px-8 gap-7">
-        <div className="w-20 h-20 rounded-[20px] overflow-hidden shadow-lg border border-white/30"
-          style={{ backgroundColor: "rgba(255,255,255,0.25)" }}>
+        <div className="w-20 h-20 rounded-[20px] overflow-hidden shadow-lg">
           <Image
-            src="/images/logo.png"
+            src="/images/app-icon.png"
             alt="KokoPin"
             width={80}
             height={80}
-            className="object-contain w-full h-full"
+            className="object-cover w-full h-full"
             priority
           />
         </div>
@@ -276,11 +275,11 @@ export default function Home() {
           <div className="flex items-center gap-2">
             <div className="w-8 h-8 rounded-xl overflow-hidden">
               <Image
-                src="/images/logo.png"
+                src="/images/app-icon.png"
                 alt="KokoPin"
                 width={32}
                 height={32}
-                className="object-contain w-full h-full"
+                className="object-cover w-full h-full"
               />
             </div>
             <span className="text-base font-black tracking-tight" style={{ color: "var(--coral)" }}>
@@ -322,9 +321,8 @@ export default function Home() {
           <div className="w-full max-w-2xl mx-auto px-5 sm:px-10 pt-10 space-y-7">
 
             {/* モバイルのみロゴ表示 */}
-            <div className="lg:hidden w-16 h-16 rounded-[18px] overflow-hidden shadow-md mx-auto"
-              style={{ backgroundColor: "var(--coral)" }}>
-              <Image src="/images/logo.png" alt="KokoPin" width={64} height={64} className="object-contain w-full h-full" priority />
+            <div className="lg:hidden w-16 h-16 rounded-[18px] overflow-hidden shadow-md mx-auto">
+              <Image src="/images/app-icon.png" alt="KokoPin" width={64} height={64} className="object-cover w-full h-full" priority />
             </div>
 
             {/* アプリ名 + バッジ */}
