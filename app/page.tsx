@@ -339,11 +339,15 @@ export default function Home() {
 
             {/* アプリ名 + バッジ */}
             <div className="space-y-2">
-              <h1 className="text-5xl sm:text-6xl font-black tracking-tighter leading-none"
-                style={{ color: "var(--navy)" }}>
-                KokoPin
-              </h1>
-              <p className="text-sm font-medium" style={{ color: "var(--text-gray)" }}>ここピン</p>
+              <h1 className="sr-only">ここピン!</h1>
+              <Image
+                src="/images/title-text.png"
+                alt="ここピン!"
+                width={2048}
+                height={411}
+                className="mx-auto w-56 sm:w-72 h-auto"
+                priority
+              />
               <span
                 className="inline-block text-xs font-bold px-4 py-1.5 rounded-full text-white mt-1"
                 style={{ backgroundColor: "var(--coral)" }}
