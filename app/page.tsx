@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Footer from "./components/Footer";
 
 /* ── 共通スタイル ── */
@@ -15,12 +16,8 @@ export default function Home() {
         <div className="w-full max-w-lg mx-auto flex flex-col items-center gap-5">
 
           {/* ロゴ */}
-          <div className="w-24 h-24 rounded-[22px] flex items-center justify-center shadow-md overflow-hidden" style={{ backgroundColor: "var(--coral)" }}>
-            {/*
-              実際のロゴ画像を配置する場合:
-              <Image src="/images/logo.png" alt="KokoPin" width={96} height={96} className="object-contain" />
-            */}
-            <span className="text-4xl">📍</span>
+          <div className="w-24 h-24 rounded-[22px] overflow-hidden shadow-md">
+            <Image src="/images/logo.png" alt="KokoPin" width={96} height={96} className="object-contain w-full h-full" priority />
           </div>
 
           {/* アプリ名 */}
@@ -63,27 +60,8 @@ export default function Home() {
           </div>
 
           {/* ヒーロー画像 */}
-          <div
-            className="w-full rounded-[24px] overflow-hidden flex items-center justify-center"
-            style={{
-              aspectRatio: "16/9",
-              backgroundColor: "#EEF1F6",
-              border: "1px solid var(--border)",
-            }}
-          >
-            {/*
-              実際の画像を配置する場合:
-              <Image src="/images/hero-drive.png" alt="運転中にHey Siriここピンと話すシーン" fill className="object-cover" />
-            */}
-            <div className="text-center space-y-2 p-6">
-              <div className="text-5xl">🚗</div>
-              <p className="text-sm font-medium" style={{ color: "var(--text-gray)" }}>
-                ヒーロー画像を配置予定
-              </p>
-              <p className="text-xs" style={{ color: "var(--border)" }}>
-                /public/images/hero-drive.png
-              </p>
-            </div>
+          <div className="w-full rounded-[24px] overflow-hidden" style={{ border: "1px solid var(--border)" }}>
+            <Image src="/images/hero-drive.png" alt="運転中にHey Siriここピンと話すシーン" width={800} height={450} className="w-full h-auto object-cover" priority />
           </div>
 
           {/* サブコピー2 */}
