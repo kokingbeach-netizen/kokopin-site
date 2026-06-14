@@ -59,6 +59,67 @@ function ImagePlaceholder({
   );
 }
 
+// ── iPhoneモックアップ ─────────────────────────────────────────────────────────
+function IPhoneMockup({
+  id,
+  label,
+  size = "md",
+}: {
+  id: string;
+  label: string;
+  size?: "sm" | "md" | "lg";
+}) {
+  const cfg = {
+    sm: { outer: "w-28",  border: "border-[7px]",  radius: "rounded-[38px]", innerR: "rounded-[32px]", notchW: "w-12", notchH: "h-[18px]", indW: "w-14" },
+    md: { outer: "w-40",  border: "border-[8px]",  radius: "rounded-[44px]", innerR: "rounded-[38px]", notchW: "w-16", notchH: "h-[20px]", indW: "w-20" },
+    lg: { outer: "w-52",  border: "border-[10px]", radius: "rounded-[52px]", innerR: "rounded-[44px]", notchW: "w-20", notchH: "h-[24px]", indW: "w-24" },
+  }[size];
+
+  return (
+    <div className={`${cfg.outer} mx-auto`}>
+      <div
+        className={`relative ${cfg.radius} ${cfg.border} border-[#1C1C1E] bg-[#1C1C1E]`}
+        style={{
+          aspectRatio: "9/19.5",
+          boxShadow: "0 24px 48px rgba(0,0,0,0.25), 0 8px 16px rgba(0,0,0,0.15)",
+        }}
+      >
+        {/* ノッチ */}
+        <div
+          className={`absolute top-0 left-1/2 -translate-x-1/2 ${cfg.notchW} ${cfg.notchH} bg-[#1C1C1E] z-10`}
+          style={{ borderRadius: "0 0 12px 12px" }}
+        />
+        {/* スクリーン */}
+        <div className={`absolute inset-0 ${cfg.innerR} overflow-hidden`}>
+          <div
+            className="w-full h-full relative flex flex-col items-center justify-center gap-2 p-3 text-center"
+            style={{
+              background: "linear-gradient(160deg, #FFF1F3 0%, #FFE0E8 55%, #FFF4EC 100%)",
+            }}
+          >
+            <div
+              className="absolute -top-6 -right-6 w-24 h-24 rounded-full pointer-events-none"
+              style={{ background: "radial-gradient(circle, rgba(255,90,111,0.35) 0%, transparent 70%)" }}
+            />
+            <span className="text-3xl relative z-10">📍</span>
+            <p className="text-xs font-bold relative z-10 leading-tight" style={{ color: "var(--coral)" }}>
+              {label}
+            </p>
+            <p className="text-[9px] font-mono opacity-30 relative z-10" style={{ color: "var(--text-gray)" }}>
+              {id}
+            </p>
+          </div>
+        </div>
+        {/* ホームインジケーター */}
+        <div
+          className={`absolute bottom-2 left-1/2 -translate-x-1/2 ${cfg.indW} h-1 rounded-full z-10`}
+          style={{ backgroundColor: "rgba(255,255,255,0.3)" }}
+        />
+      </div>
+    </div>
+  );
+}
+
 // ── 左サイドバー（PCのみ表示） ─────────────────────────────────────────────────
 function LeftSidebar() {
   return (
@@ -243,64 +304,89 @@ export default function Home() {
         ───────────────────────────────────────────── */}
         <section
           id="hero"
-          className="bg-white px-5 sm:px-10 pt-14 pb-14 flex flex-col items-center text-center"
+          className="bg-white pb-14 flex flex-col items-center text-center"
           style={{ borderBottom: "1px solid var(--border)" }}
         >
-          <div className="w-full max-w-2xl mx-auto space-y-6">
+          {/* ── ヒーロー画像（最上部・全幅） ── */}
+          <div className="w-full overflow-hidden" style={{ borderBottom: "1px solid var(--border)" }}>
+            <Image
+              src="/images/hero-drive.png"
+              alt="運転中にHey Siriここピンと話すシーン"
+              width={1200}
+              height={675}
+              className="w-full h-auto object-cover"
+              priority
+            />
+          </div>
 
-            {/* モバイルのみロゴ表示（PCは左サイドバー） */}
-            <div className="lg:hidden w-20 h-20 rounded-[22px] overflow-hidden shadow-md mx-auto"
+          <div className="w-full max-w-2xl mx-auto px-5 sm:px-10 pt-10 space-y-7">
+
+            {/* モバイルのみロゴ表示 */}
+            <div className="lg:hidden w-16 h-16 rounded-[18px] overflow-hidden shadow-md mx-auto"
               style={{ backgroundColor: "var(--coral)" }}>
-              <Image src="/images/logo.png" alt="KokoPin" width={80} height={80} className="object-contain w-full h-full" priority />
+              <Image src="/images/logo.png" alt="KokoPin" width={64} height={64} className="object-contain w-full h-full" priority />
             </div>
 
-            <div className="space-y-1">
+            {/* アプリ名 + バッジ */}
+            <div className="space-y-2">
               <h1 className="text-5xl sm:text-6xl font-black tracking-tighter leading-none"
                 style={{ color: "var(--navy)" }}>
                 KokoPin
               </h1>
               <p className="text-sm font-medium" style={{ color: "var(--text-gray)" }}>ここピン</p>
+              <span
+                className="inline-block text-xs font-bold px-4 py-1.5 rounded-full text-white mt-1"
+                style={{ backgroundColor: "var(--coral)" }}
+              >
+                iOS版 近日公開予定
+              </span>
             </div>
 
-            <span
-              className="inline-block text-xs font-bold px-4 py-1.5 rounded-full text-white"
-              style={{ backgroundColor: "var(--coral)" }}
-            >
-              iOS版 近日公開予定
-            </span>
-
-            <div className="space-y-3">
-              <p className="text-lg sm:text-xl font-bold leading-snug" style={{ color: "var(--navy)" }}>
-                運転中、気になった場所があったら
-              </p>
-              <p className="text-3xl sm:text-4xl font-black tracking-tight leading-tight"
-                style={{ color: "var(--coral)" }}>
-                「Hey Siri ここピン」
-              </p>
-              <p className="text-xl sm:text-2xl font-black" style={{ color: "var(--navy)" }}>
-                声でMAPにピンしよう
-              </p>
-              <p className="text-sm" style={{ color: "var(--text-gray)" }}>
-                Google Maps・Apple Maps対応
-              </p>
+            {/* iPhoneモックアップ + コピー（PC：横並び / モバイル：縦） */}
+            <div className="flex flex-col sm:flex-row items-center gap-8 sm:gap-10">
+              {/* iPhoneモックアップ */}
+              <div className="flex-shrink-0">
+                <IPhoneMockup id="hero-app-screen" label="ここにKokoPinアプリ画面" size="lg" />
+              </div>
+              {/* コピー */}
+              <div className="space-y-4 text-center sm:text-left">
+                <p className="text-lg sm:text-xl font-bold leading-snug" style={{ color: "var(--navy)" }}>
+                  運転中、気になった場所があったら
+                </p>
+                <p className="text-2xl sm:text-3xl font-black tracking-tight leading-tight"
+                  style={{ color: "var(--coral)" }}>
+                  「Hey Siri ここピン」
+                </p>
+                <p className="text-lg sm:text-xl font-black" style={{ color: "var(--navy)" }}>
+                  声でMAPにピンしよう
+                </p>
+                <p className="text-sm" style={{ color: "var(--text-gray)" }}>
+                  気になった場所を、あとで行ける場所に。
+                </p>
+              </div>
             </div>
 
-            {/* ヒーロー画像 */}
-            <div className="w-full rounded-[24px] overflow-hidden"
-              style={{ border: "1px solid var(--border)" }}>
-              <Image
-                src="/images/hero-drive.png"
-                alt="運転中にHey Siriここピンと話すシーン"
-                width={1200}
-                height={675}
-                className="w-full h-auto object-cover"
-                priority
-              />
+            {/* アプリバッジ */}
+            <div className="flex flex-wrap gap-2 justify-center">
+              {[
+                { icon: "📱", label: "iPhoneアプリ" },
+                { icon: "🎙️", label: "Siri対応" },
+                { icon: "🍎", label: "Apple Maps対応" },
+                { icon: "🗺️", label: "Google Maps対応" },
+              ].map((badge) => (
+                <span
+                  key={badge.label}
+                  className="flex items-center gap-1.5 text-xs font-bold px-3 py-1.5 rounded-full"
+                  style={{
+                    backgroundColor: "var(--pale-bg)",
+                    border: "1px solid var(--border)",
+                    color: "var(--navy)",
+                  }}
+                >
+                  {badge.icon} {badge.label}
+                </span>
+              ))}
             </div>
-
-            <p className="text-sm leading-relaxed" style={{ color: "var(--text-gray)" }}>
-              気になった場所を、あとで行ける場所に。
-            </p>
 
             {/* App Storeボタン（モバイルのみ・PCは右サイドバー） */}
             <div
@@ -315,7 +401,35 @@ export default function Home() {
         </section>
 
         {/* ─────────────────────────────────────────────
-            SECTION 2 : こんな時に使える
+            SECTION 2 : アプリ画面（ヒーロー直後）
+        ───────────────────────────────────────────── */}
+        <section
+          id="app-screens"
+          className="px-5 sm:px-10 py-14"
+          style={{ backgroundColor: "var(--pale-bg)" }}
+        >
+          <div className="max-w-2xl mx-auto space-y-8">
+            <div className="text-center space-y-1">
+              <h2 className="text-2xl sm:text-3xl font-black tracking-tight" style={{ color: "var(--navy)" }}>
+                アプリ画面
+              </h2>
+              <p className="text-sm" style={{ color: "var(--text-gray)" }}>
+                スクリーンショット順次公開予定
+              </p>
+            </div>
+            <div className="flex justify-center gap-4 sm:gap-8">
+              <IPhoneMockup id="screen-list-visual"   label="一覧画面"  size="md" />
+              <IPhoneMockup id="screen-detail-visual" label="詳細画面"  size="md" />
+              <IPhoneMockup id="screen-map-visual"    label="地図画面"  size="md" />
+            </div>
+            <p className="text-center text-xs" style={{ color: "var(--text-gray)" }}>
+              一覧画面・詳細画面・地図画面
+            </p>
+          </div>
+        </section>
+
+        {/* ─────────────────────────────────────────────
+            SECTION 3 : こんな時に使える
         ───────────────────────────────────────────── */}
         <section
           id="scenes"
@@ -436,37 +550,6 @@ export default function Home() {
                       </p>
                     </div>
                   </div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* ─────────────────────────────────────────────
-            SECTION 5 : アプリ画面
-        ───────────────────────────────────────────── */}
-        <section
-          id="app-screens"
-          className="px-5 sm:px-10 py-14"
-          style={{ backgroundColor: "var(--pale-bg)" }}
-        >
-          <div className="max-w-2xl mx-auto space-y-6">
-            <div className="space-y-1">
-              <h2 className="text-2xl sm:text-3xl font-black tracking-tight" style={{ color: "var(--navy)" }}>
-                アプリ画面
-              </h2>
-              <p className="text-sm" style={{ color: "var(--text-gray)" }}>
-                一覧・詳細・地図画面（スクリーンショット表示予定）
-              </p>
-            </div>
-            <div className="flex gap-4 overflow-x-auto pb-3 snap-x snap-mandatory scrollbar-hide sm:grid sm:grid-cols-3 sm:overflow-visible">
-              {[
-                { id: "screen-list-visual",   label: "一覧画面" },
-                { id: "screen-detail-visual", label: "詳細画面" },
-                { id: "screen-map-visual",    label: "地図画面" },
-              ].map((s) => (
-                <div key={s.id} className="flex-shrink-0 snap-start w-[180px] sm:w-auto">
-                  <ImagePlaceholder id={s.id} label={s.label} aspect="9/16" />
                 </div>
               ))}
             </div>
