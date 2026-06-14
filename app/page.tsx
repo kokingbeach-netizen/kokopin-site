@@ -335,8 +335,8 @@ export default function Home() {
           <div className="w-full max-w-2xl mx-auto px-5 sm:px-10 pt-10 space-y-7">
 
             {/* モバイルのみロゴ表示 */}
-            <div className="lg:hidden w-16 h-16 rounded-[18px] overflow-hidden shadow-md mx-auto">
-              <Image src="/images/app-icon.png" alt="KokoPin" width={64} height={64} className="object-cover w-full h-full" priority />
+            <div className="lg:hidden w-40 h-40 rounded-[45px] overflow-hidden shadow-md mx-auto">
+              <Image src="/images/app-icon.png" alt="KokoPin" width={160} height={160} className="object-cover w-full h-full" priority />
             </div>
 
             {/* アプリ名 + バッジ */}
