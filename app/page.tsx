@@ -557,33 +557,35 @@ export default function Home() {
         </section>
 
         {/* ─────────────────────────────────────────────
-            SECTION 6 : 特徴
+            SECTION 6 : アプリ画面紹介（4画面）
         ───────────────────────────────────────────── */}
         <section className="px-5 sm:px-10 py-14 bg-white">
-          <div className="max-w-2xl mx-auto space-y-6">
-            <h2 className="text-2xl sm:text-3xl font-black tracking-tight" style={{ color: "var(--navy)" }}>
-              KokoPinの特徴
-            </h2>
-            <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
+          <div className="max-w-2xl mx-auto space-y-8">
+            <div className="text-center space-y-1">
+              <h2 className="text-2xl sm:text-3xl font-black tracking-tight" style={{ color: "var(--navy)" }}>
+                アプリ画面紹介
+              </h2>
+              <p className="text-sm" style={{ color: "var(--text-gray)" }}>
+                スクリーンショットは順次公開予定
+              </p>
+            </div>
+            <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 sm:gap-5">
               {[
-                { icon: "🎙️", label: "Siriで保存" },
-                { icon: "📍", label: "場所を記録" },
-                { icon: "🍎", label: "Apple Maps対応" },
-                { icon: "🗺️", label: "Google Maps対応" },
-                { icon: "🔍", label: "あとで見返せる" },
-              ].map((item) => (
-                <div
-                  key={item.label}
-                  className="rounded-[20px] p-5 space-y-2"
-                  style={{
-                    backgroundColor: "var(--pale-bg)",
-                    border: "1px solid var(--border)",
-                  }}
-                >
-                  <span className="text-2xl">{item.icon}</span>
-                  <p className="text-sm font-bold" style={{ color: "var(--navy)" }}>
-                    {item.label}
-                  </p>
+                { id: "feature-list-visual",   label: "保存一覧画面", desc: "気になった場所を一覧で管理" },
+                { id: "feature-detail-visual", label: "詳細画面",     desc: "あとから場所を確認" },
+                { id: "feature-map-visual",    label: "地図表示",     desc: "Apple Maps・Google Maps対応" },
+                { id: "feature-siri-visual",   label: "Siri保存",     desc: "音声だけで記録" },
+              ].map((screen) => (
+                <div key={screen.id} className="flex flex-col items-center gap-3">
+                  <IPhoneMockup id={screen.id} label={screen.label} size="sm" />
+                  <div className="text-center space-y-0.5">
+                    <p className="text-xs font-black" style={{ color: "var(--navy)" }}>
+                      {screen.label}
+                    </p>
+                    <p className="text-xs leading-snug" style={{ color: "var(--text-gray)" }}>
+                      {screen.desc}
+                    </p>
+                  </div>
                 </div>
               ))}
             </div>
