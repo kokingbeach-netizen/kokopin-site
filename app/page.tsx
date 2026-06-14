@@ -64,10 +64,12 @@ function IPhoneMockup({
   id,
   label,
   size = "md",
+  image,
 }: {
   id: string;
   label: string;
   size?: "sm" | "md" | "lg";
+  image?: string;
 }) {
   const cfg = {
     sm: { outer: "w-28",  border: "border-[7px]",  radius: "rounded-[38px]", innerR: "rounded-[32px]", notchW: "w-12", notchH: "h-[18px]", indW: "w-14" },
@@ -91,24 +93,34 @@ function IPhoneMockup({
         />
         {/* スクリーン */}
         <div className={`absolute inset-0 ${cfg.innerR} overflow-hidden`}>
-          <div
-            className="w-full h-full relative flex flex-col items-center justify-center gap-2 p-3 text-center"
-            style={{
-              background: "linear-gradient(160deg, #FFF1F3 0%, #FFE0E8 55%, #FFF4EC 100%)",
-            }}
-          >
-            <div
-              className="absolute -top-6 -right-6 w-24 h-24 rounded-full pointer-events-none"
-              style={{ background: "radial-gradient(circle, rgba(255,90,111,0.35) 0%, transparent 70%)" }}
+          {image ? (
+            <Image
+              src={image}
+              alt={label}
+              fill
+              className="object-cover object-top"
+              sizes="(max-width: 640px) 208px, 208px"
             />
-            <span className="text-3xl relative z-10">📍</span>
-            <p className="text-xs font-bold relative z-10 leading-tight" style={{ color: "var(--coral)" }}>
-              {label}
-            </p>
-            <p className="text-[9px] font-mono opacity-30 relative z-10" style={{ color: "var(--text-gray)" }}>
-              {id}
-            </p>
-          </div>
+          ) : (
+            <div
+              className="w-full h-full relative flex flex-col items-center justify-center gap-2 p-3 text-center"
+              style={{
+                background: "linear-gradient(160deg, #FFF1F3 0%, #FFE0E8 55%, #FFF4EC 100%)",
+              }}
+            >
+              <div
+                className="absolute -top-6 -right-6 w-24 h-24 rounded-full pointer-events-none"
+                style={{ background: "radial-gradient(circle, rgba(255,90,111,0.35) 0%, transparent 70%)" }}
+              />
+              <span className="text-3xl relative z-10">📍</span>
+              <p className="text-xs font-bold relative z-10 leading-tight" style={{ color: "var(--coral)" }}>
+                {label}
+              </p>
+              <p className="text-[9px] font-mono opacity-30 relative z-10" style={{ color: "var(--text-gray)" }}>
+                {id}
+              </p>
+            </div>
+          )}
         </div>
         {/* ホームインジケーター */}
         <div
@@ -344,7 +356,7 @@ export default function Home() {
             <div className="flex flex-col sm:flex-row items-center gap-8 sm:gap-10">
               {/* iPhoneモックアップ */}
               <div className="flex-shrink-0">
-                <IPhoneMockup id="hero-app-screen" label="ここにKokoPinアプリ画面" size="lg" />
+                <IPhoneMockup id="hero-app-screen" label="KokoPinアプリ画面" size="lg" image="/images/screen-home.png" />
               </div>
               {/* コピー */}
               <div className="space-y-4 text-center sm:text-left">
