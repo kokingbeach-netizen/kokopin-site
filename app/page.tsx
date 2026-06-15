@@ -316,7 +316,7 @@ export default function Home() {
 
 
                 {/* メインコピー */}
-                <div className="space-y-2">
+                <div className="space-y-2 mt-4 sm:mt-6">
                   <p className="text-base sm:text-lg font-bold leading-snug" style={{ color: "var(--navy)" }}>
                     運転中、気になった場所があったら
                   </p>
