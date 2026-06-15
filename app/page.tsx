@@ -62,11 +62,13 @@ function IPhoneMockup({
   label,
   size = "md",
   image,
+  className,
 }: {
   id: string;
   label: string;
   size?: "sm" | "md" | "lg";
   image?: string;
+  className?: string;
 }) {
   const cfg = {
     sm: { outer: "w-28",  border: "border-[7px]",  radius: "rounded-[38px]", innerR: "rounded-[32px]", notchW: "w-12", notchH: "h-[18px]", indW: "w-14" },
@@ -75,7 +77,7 @@ function IPhoneMockup({
   }[size];
 
   return (
-    <div className={`${cfg.outer} mx-auto`}>
+    <div className={className ?? `${cfg.outer} mx-auto`}>
       <div
         className={`relative ${cfg.radius} ${cfg.border} border-[#1C1C1E] bg-[#1C1C1E]`}
         style={{
@@ -290,17 +292,12 @@ export default function Home() {
             />
           </div>
 
-          {/* ── コンテンツ（PC：2カラム / モバイル：縦積み） ── */}
-          <div className="px-5 sm:px-10 pt-10">
-            <div className="flex flex-col sm:flex-row items-center gap-8 sm:gap-10">
+          {/* ── コンテンツ（常に2カラム横並び） ── */}
+          <div className="px-4 sm:px-10 pt-8 sm:pt-10">
+            <div className="flex flex-row items-start gap-4 sm:gap-10">
 
               {/* ── 左列：テキスト・CTA ── */}
-              <div className="flex flex-col items-center sm:items-start text-center sm:text-left gap-5 flex-1">
-
-                {/* ロゴ（モバイルのみ） */}
-                <div className="sm:hidden w-40 h-40 rounded-[45px] overflow-hidden shadow-lg mx-auto">
-                  <Image src="/images/app-icon.png" alt="KokoPin" width={160} height={160} className="object-cover w-full h-full" priority />
-                </div>
+              <div className="flex flex-col items-start text-left gap-3 sm:gap-5 flex-1 min-w-0">
 
                 {/* ここピン! テキストロゴ */}
                 <div>
@@ -310,32 +307,32 @@ export default function Home() {
                     alt="ここピン!"
                     width={2048}
                     height={411}
-                    className="w-56 sm:w-64 h-auto"
+                    className="w-32 sm:w-64 h-auto"
                     priority
                   />
-                  <p className="text-sm font-bold mt-1" style={{ color: "var(--text-gray)" }}>KokoPin</p>
+                  <p className="text-xs font-bold mt-0.5" style={{ color: "var(--text-gray)" }}>KokoPin</p>
                 </div>
 
                 {/* アプリ説明・iOS・価格 */}
-                <div className="space-y-2.5">
-                  <p className="text-sm font-bold" style={{ color: "var(--text-gray)" }}>
+                <div className="space-y-2">
+                  <p className="text-xs sm:text-sm font-bold" style={{ color: "var(--text-gray)" }}>
                     声でMAPにPinするアプリ
                   </p>
-                  <div className="flex flex-wrap items-center gap-2 justify-center sm:justify-start">
+                  <div className="flex flex-wrap items-center gap-1.5">
                     <span
-                      className="inline-block text-xs font-bold px-4 py-1.5 rounded-full text-white"
+                      className="inline-block text-xs font-bold px-3 py-1 rounded-full text-white"
                       style={{ backgroundColor: "var(--coral)" }}
                     >
                       iOS版 近日公開予定
                     </span>
                     <span
-                      className="flex items-center gap-1 text-xs font-bold px-3 py-1.5 rounded-full"
+                      className="flex items-center gap-1 text-xs font-bold px-2.5 py-1 rounded-full"
                       style={{ backgroundColor: "var(--pale-bg)", border: "1px solid var(--border)", color: "var(--navy)" }}
                     >
                       📱 iPhoneアプリ
                     </span>
                     <span
-                      className="flex items-center gap-1 text-xs font-bold px-3 py-1.5 rounded-full"
+                      className="flex items-center gap-1 text-xs font-bold px-2.5 py-1 rounded-full"
                       style={{ backgroundColor: "#FFF4F0", border: "1px solid #FFCCC0", color: "var(--coral)" }}
                     >
                       ¥300 買い切り
@@ -344,23 +341,23 @@ export default function Home() {
                 </div>
 
                 {/* メインコピー */}
-                <div className="space-y-2">
-                  <p className="text-base sm:text-lg font-bold leading-snug" style={{ color: "var(--navy)" }}>
+                <div className="space-y-1.5 sm:space-y-2">
+                  <p className="text-xs sm:text-lg font-bold leading-snug" style={{ color: "var(--navy)" }}>
                     運転中、気になった場所があったら
                   </p>
-                  <p className="text-3xl sm:text-4xl font-black tracking-tight leading-tight" style={{ color: "var(--coral)" }}>
+                  <p className="text-lg sm:text-4xl font-black tracking-tight leading-tight" style={{ color: "var(--coral)" }}>
                     「Hey Siri ここピン」
                   </p>
-                  <p className="text-xl font-black" style={{ color: "var(--navy)" }}>
+                  <p className="text-sm sm:text-xl font-black" style={{ color: "var(--navy)" }}>
                     声でMAPにピンしよう
                   </p>
-                  <p className="text-sm" style={{ color: "var(--text-gray)" }}>
+                  <p className="text-xs sm:text-sm" style={{ color: "var(--text-gray)" }}>
                     気になった場所を、あとで行ける場所に。
                   </p>
                 </div>
 
                 {/* バッジ行 */}
-                <div className="flex flex-wrap gap-2 justify-center sm:justify-start">
+                <div className="flex flex-wrap gap-1.5 sm:gap-2">
                   {[
                     { icon: "📱", label: "iPhoneアプリ" },
                     { icon: "🎙️", label: "Siri対応" },
@@ -369,7 +366,7 @@ export default function Home() {
                   ].map((badge) => (
                     <span
                       key={badge.label}
-                      className="flex items-center gap-1.5 text-xs font-bold px-3 py-1.5 rounded-full"
+                      className="flex items-center gap-1 text-xs font-bold px-2.5 py-1 rounded-full"
                       style={{
                         backgroundColor: "var(--pale-bg)",
                         border: "1px solid var(--border)",
@@ -383,11 +380,11 @@ export default function Home() {
 
                 {/* App Storeボタン */}
                 <div
-                  className="flex flex-col items-center sm:items-start gap-1 py-4 px-6 rounded-2xl cursor-not-allowed select-none w-full max-w-xs"
+                  className="flex flex-col items-start gap-0.5 py-3 px-4 rounded-xl cursor-not-allowed select-none w-full"
                   style={{ backgroundColor: "#F0F2F5", border: "2px dashed var(--border)" }}
                   aria-disabled="true"
                 >
-                  <span className="text-sm font-bold" style={{ color: "#B0BAC9" }}>App Storeでダウンロード</span>
+                  <span className="text-xs sm:text-sm font-bold" style={{ color: "#B0BAC9" }}>App Storeでダウンロード</span>
                   <span className="text-xs" style={{ color: "#B0BAC9" }}>近日公開予定</span>
                 </div>
               </div>
@@ -399,6 +396,7 @@ export default function Home() {
                   label="KokoPinアプリ画面"
                   size="lg"
                   image="/images/screen-home.png"
+                  className="w-28 sm:w-52 mx-auto"
                 />
               </div>
 
