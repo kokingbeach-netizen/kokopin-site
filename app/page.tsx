@@ -312,7 +312,17 @@ export default function Home() {
                 {/* アプリ説明 */}
                 <div>
                   <h1 className="sr-only">ここピン! — 声でMAPにピンしよう</h1>
-                  <p className="text-3xl sm:text-4xl font-bold" style={{ color: "var(--text-dark)" }}>声でMAPにPinするアプリ</p>
+                  <p
+                    className="text-3xl sm:text-4xl font-black"
+                    style={{
+                      background: "linear-gradient(135deg, var(--coral) 0%, var(--navy) 100%)",
+                      WebkitBackgroundClip: "text",
+                      WebkitTextFillColor: "transparent",
+                      backgroundClip: "text",
+                    }}
+                  >
+                    声でMAPにPinするアプリ
+                  </p>
                 </div>
 
 
