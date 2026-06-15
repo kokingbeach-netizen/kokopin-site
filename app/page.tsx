@@ -302,18 +302,10 @@ export default function Home() {
                   <Image src="/images/app-icon.png" alt="KokoPin" width={160} height={160} className="object-cover w-full h-full" priority />
                 </div>
 
-                {/* ここピン! テキストロゴ */}
+                {/* アプリ説明 */}
                 <div>
                   <h1 className="sr-only">ここピン! — 声でMAPにピンしよう</h1>
-                  <Image
-                    src="/images/title-text.png"
-                    alt="ここピン!"
-                    width={2048}
-                    height={411}
-                    className="w-56 sm:w-64 h-auto"
-                    priority
-                  />
-                  <p className="text-3xl sm:text-4xl font-bold mt-2" style={{ color: "var(--text-dark)" }}>声でMAPにPinするアプリ</p>
+                  <p className="text-3xl sm:text-4xl font-bold" style={{ color: "var(--text-dark)" }}>声でMAPにPinするアプリ</p>
                 </div>
 
                 {/* iOS・価格 */}
