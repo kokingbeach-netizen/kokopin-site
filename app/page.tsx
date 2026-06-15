@@ -313,7 +313,7 @@ export default function Home() {
                     className="w-56 sm:w-64 h-auto"
                     priority
                   />
-                  <p className="text-base sm:text-lg font-bold mt-2" style={{ color: "var(--text-dark)" }}>声でMAPにPinするアプリ</p>
+                  <p className="text-3xl sm:text-4xl font-bold mt-2" style={{ color: "var(--text-dark)" }}>声でMAPにPinするアプリ</p>
                 </div>
 
                 {/* iOS・価格 */}
