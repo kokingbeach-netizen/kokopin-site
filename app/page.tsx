@@ -427,16 +427,16 @@ export default function Home() {
             SECTION 3 : ビジュアル＋大コピー（ネイビー背景）
         ───────────────────────────────────────────── */}
         <section
-          className="px-5 sm:px-10 py-16 bg-white"
+          className="py-16 bg-white"
         >
-          <div className="max-w-2xl mx-auto space-y-10">
-            <Image
-              src="/images/kokoPINイラスト.png"
-              alt="ここピン! イラスト"
-              width={1774}
-              height={887}
-              className="w-full h-auto rounded-2xl"
-            />
+          <Image
+            src="/images/kokoPINイラスト.png"
+            alt="ここピン! イラスト"
+            width={1774}
+            height={887}
+            className="w-full h-auto"
+          />
+          <div className="max-w-2xl mx-auto px-5 sm:px-10 space-y-10 mt-10">
             <div className="space-y-5 text-center">
               <p className="text-lg sm:text-xl font-bold leading-relaxed" style={{ color: "var(--text-gray)" }}>
                 スマホが使えない、手が離せない時、<br />
