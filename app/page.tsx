@@ -492,7 +492,7 @@ export default function Home() {
                 { step: 1, icon: "🎙️", title: "「Hey Siri ここピン」と言う",
                   desc: "気になる場所があったらSiriに言う。" },
                 { step: 2, icon: "💬", title: "メモを一言",
-                  desc: "「どんな場所」と聞かれたら、メモを言う。" },
+                  desc: "「どんな場所？」と聞かれたら、メモを言う。" },
                 { step: 3, icon: "📍", title: "位置とメモが自動保存",
                   desc: "話しかけた瞬間の位置情報が自動で記録されます。" },
                 { step: 4, icon: "🗺️", title: "あとで見返す",
