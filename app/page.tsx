@@ -427,7 +427,7 @@ export default function Home() {
             SECTION 3 : ビジュアル＋大コピー（ネイビー背景）
         ───────────────────────────────────────────── */}
         <section
-          className="py-16 bg-white"
+          className="pb-10 bg-white"
         >
           <Image
             src="/images/kokoPINイラスト.png"
@@ -436,7 +436,7 @@ export default function Home() {
             height={887}
             className="w-full h-auto"
           />
-          <div className="max-w-2xl mx-auto px-5 sm:px-10 space-y-10 mt-10">
+          <div className="max-w-2xl mx-auto px-5 sm:px-10 space-y-5 mt-6">
             <div className="space-y-5 text-center">
               <p className="text-lg sm:text-xl font-bold leading-relaxed" style={{ color: "var(--text-gray)" }}>
                 スマホが使えない、手が離せない時、<br />
