@@ -403,31 +403,6 @@ export default function Home() {
             </div>
           </div>
 
-          {/* ── 4つの特徴カード ── */}
-          <div className="px-5 sm:px-10 mt-10" style={{ borderTop: "1px solid var(--border)", paddingTop: "32px" }}>
-            <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
-              {[
-                { icon: "🎙️", title: "声だけで保存",   desc: "Siriに話しかけるだけ" },
-                { icon: "📍",  title: "場所を記録",     desc: "現在地が自動で保存" },
-                { icon: "🗺️", title: "地図で確認",     desc: "Apple・Google Maps対応" },
-                { icon: "📋",  title: "あとで見返せる", desc: "一覧から簡単アクセス" },
-              ].map((card) => (
-                <div
-                  key={card.title}
-                  className="flex flex-col gap-2 rounded-[20px] p-4"
-                  style={{
-                    backgroundColor: "var(--pale-bg)",
-                    border: "1px solid var(--border)",
-                    boxShadow: "0 2px 8px rgba(0,0,0,0.04)",
-                  }}
-                >
-                  <span className="text-2xl">{card.icon}</span>
-                  <p className="text-xs font-black" style={{ color: "var(--navy)" }}>{card.title}</p>
-                  <p className="text-xs leading-snug" style={{ color: "var(--text-gray)" }}>{card.desc}</p>
-                </div>
-              ))}
-            </div>
-          </div>
         </section>
 
         {/* ─────────────────────────────────────────────
