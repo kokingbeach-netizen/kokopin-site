@@ -330,8 +330,8 @@ export default function Home() {
                   <p className="text-xl font-black" style={{ color: "var(--navy)" }}>
                     声でMAPにピンしよう
                   </p>
-                  <p className="text-sm" style={{ color: "var(--text-gray)" }}>
-                    気になった場所を、あとで行ける場所に。
+                  <p className="text-2xl sm:text-3xl font-bold" style={{ color: "var(--text-dark)" }}>
+                    保存した位置をMapで確認
                   </p>
                 </div>
 
