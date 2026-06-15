@@ -253,18 +253,14 @@ export default function Home() {
         style={{ borderBottom: "1px solid var(--border)" }}
       >
         <div className="px-5 h-14 flex items-center justify-between">
-          <div className="flex items-center gap-2.5">
-            <div className="w-11 h-11 rounded-[12px] overflow-hidden flex-shrink-0">
-              <Image src="/images/app-icon.png" alt="KokoPin" width={44} height={44} className="object-cover w-full h-full" />
-            </div>
-            <Image
-              src="/images/title-text.png"
-              alt="ここピン!"
-              width={2048}
-              height={411}
-              className="w-28 h-auto"
-            />
-          </div>
+          <Image
+            src="/images/Kokopinheader.png"
+            alt="ここピン! KokoPin"
+            width={1323}
+            height={375}
+            className="h-9 w-auto"
+            priority
+          />
           <span className="text-xs font-bold px-3 py-1 rounded-full text-white" style={{ backgroundColor: "var(--coral)" }}>
             近日公開予定
           </span>
