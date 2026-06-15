@@ -327,33 +327,31 @@ export default function Home() {
                     height={471}
                     className="w-full max-w-xs sm:max-w-sm h-auto"
                   />
-                  <p className="text-xl font-black" style={{ color: "var(--navy)" }}>
-                    声でMAPにピンしよう
-                  </p>
-                  <p className="text-2xl sm:text-3xl font-bold" style={{ color: "var(--text-dark)" }}>
-                    後で保存した位置をMapで確認
-                  </p>
+                  <div className="space-y-1.5">
+                    <p className="text-2xl sm:text-3xl font-bold" style={{ color: "var(--text-dark)" }}>
+                      後で保存した位置をMapで確認
+                    </p>
+                    <div className="flex flex-wrap gap-2 justify-center sm:justify-start">
+                      {[
+                        { icon: "🍎", label: "Apple Maps対応" },
+                        { icon: "🗺️", label: "Google Maps対応" },
+                      ].map((badge) => (
+                        <span
+                          key={badge.label}
+                          className="flex items-center gap-1.5 text-xs font-bold px-3 py-1.5 rounded-full"
+                          style={{
+                            backgroundColor: "var(--pale-bg)",
+                            border: "1px solid var(--border)",
+                            color: "var(--navy)",
+                          }}
+                        >
+                          {badge.icon} {badge.label}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
                 </div>
 
-                {/* バッジ行 */}
-                <div className="flex flex-wrap gap-2 justify-center sm:justify-start">
-                  {[
-                    { icon: "🍎", label: "Apple Maps対応" },
-                    { icon: "🗺️", label: "Google Maps対応" },
-                  ].map((badge) => (
-                    <span
-                      key={badge.label}
-                      className="flex items-center gap-1.5 text-xs font-bold px-3 py-1.5 rounded-full"
-                      style={{
-                        backgroundColor: "var(--pale-bg)",
-                        border: "1px solid var(--border)",
-                        color: "var(--navy)",
-                      }}
-                    >
-                      {badge.icon} {badge.label}
-                    </span>
-                  ))}
-                </div>
 
                 {/* App Storeボタン */}
                 <div
