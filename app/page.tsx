@@ -330,7 +330,7 @@ export default function Home() {
                   />
                   <div className="space-y-1.5 mt-6 sm:mt-8">
                     <p className="text-2xl sm:text-3xl font-bold" style={{ color: "var(--text-dark)" }}>
-                      後で保存した位置をMapで確認
+                      後でアプリから保存した位置をMapで確認
                     </p>
                     <div className="flex flex-wrap gap-2 justify-center sm:justify-start">
                       {[
