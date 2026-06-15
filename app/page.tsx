@@ -313,14 +313,11 @@ export default function Home() {
                     className="w-56 sm:w-64 h-auto"
                     priority
                   />
-                  <p className="text-sm font-bold mt-1" style={{ color: "var(--text-gray)" }}>KokoPin</p>
+                  <p className="text-base sm:text-lg font-bold mt-2" style={{ color: "var(--text-dark)" }}>声でMAPにPinするアプリ</p>
                 </div>
 
-                {/* アプリ説明・iOS・価格 */}
+                {/* iOS・価格 */}
                 <div className="space-y-2.5">
-                  <p className="text-sm font-bold" style={{ color: "var(--text-gray)" }}>
-                    声でMAPにPinするアプリ
-                  </p>
                   <div className="flex flex-wrap items-center gap-2 justify-center sm:justify-start">
                     <span
                       className="inline-block text-xs font-bold px-4 py-1.5 rounded-full text-white"
