@@ -461,28 +461,23 @@ export default function Home() {
             <div className="flex flex-col gap-5">
               {[
                 { step: 1, icon: "🎙️", title: "「Hey Siri ここピン」と言う",
-                  desc: "Siriに一言話しかけるだけ。スマホに触れる必要はありません。",
-                  visual: "step-1-visual", label: "STEP1の画像" },
+                  desc: "Siriに一言話しかけるだけ。スマホに触れる必要はありません。" },
                 { step: 2, icon: "💬", title: "一言メモを話す",
-                  desc: "「あのラーメン屋」「気になるカフェ」など自由に。",
-                  visual: "step-2-visual", label: "STEP2の画像" },
+                  desc: "「あのラーメン屋」「気になるカフェ」など自由に。" },
                 { step: 3, icon: "📍", title: "位置とメモが保存される",
-                  desc: "話しかけた瞬間の位置情報が自動で記録されます。",
-                  visual: "step-3-visual", label: "STEP3の画像" },
+                  desc: "話しかけた瞬間の位置情報が自動で記録されます。" },
                 { step: 4, icon: "🗺️", title: "あとで見返す",
-                  desc: "Google Maps・Apple Maps対応。地図上で確認できます。",
-                  visual: "step-4-visual", label: "STEP4の画像" },
+                  desc: "Google Maps・Apple Maps対応。地図上で確認できます。" },
               ].map((item) => (
                 <div
                   key={item.step}
-                  className="rounded-[28px] overflow-hidden"
+                  className="rounded-[28px]"
                   style={{
                     backgroundColor: "var(--white)",
                     border: "1px solid var(--border)",
                     boxShadow: "0 4px 20px rgba(0,0,0,0.06)",
                   }}
                 >
-                  <ImagePlaceholder id={item.visual} label={item.label} aspect="16/7" />
                   <div className="p-5 flex gap-4 items-start">
                     <div
                       className="flex-shrink-0 w-10 h-10 rounded-full flex items-center justify-center text-white font-black text-sm"
