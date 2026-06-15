@@ -530,27 +530,27 @@ export default function Home() {
         </section>
 
         {/* ─────────────────────────────────────────────
-            SECTION 5 : アプリ画面紹介（4画面）
+            SECTION 5 : アプリ画面紹介（横スクロール）
         ───────────────────────────────────────────── */}
-        <section id="app-screens" className="px-5 sm:px-10 py-14 bg-white">
-          <div className="max-w-2xl mx-auto space-y-8">
-            <div className="text-center space-y-1">
+        <section id="app-screens" className="py-14 bg-white">
+          <div className="space-y-8">
+            <div className="text-center space-y-1 px-5 sm:px-10">
               <h2 className="text-2xl sm:text-3xl font-black tracking-tight" style={{ color: "var(--navy)" }}>
                 アプリ画面紹介
               </h2>
-              <p className="text-sm" style={{ color: "var(--text-gray)" }}>スクリーンショットは順次公開予定</p>
             </div>
-            <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 sm:gap-5">
+            <div className="flex gap-6 overflow-x-auto pb-6 px-5 sm:px-10 snap-x snap-mandatory scrollbar-hide">
               {[
-                { id: "feature-list-visual",   label: "保存一覧画面", desc: "気になった場所を一覧で管理" },
-                { id: "feature-detail-visual", label: "詳細画面",     desc: "あとから場所を確認" },
-                { id: "feature-map-visual",    label: "地図表示",     desc: "Apple Maps・Google Maps対応" },
-                { id: "feature-siri-visual",   label: "Siri保存",     desc: "音声だけで記録" },
+                { id: "screen-home",   label: "メイン画面",   desc: "タップして現在地をピン記録" },
+                { id: "screen-list",   label: "保存一覧",     desc: "記録した場所を一覧で確認" },
+                { id: "screen-detail", label: "詳細画面",     desc: "保存した場所の詳細を確認" },
+                { id: "screen-map",    label: "地図で確認",   desc: "Apple Maps・Google Maps対応" },
+                { id: "screen-siri",   label: "Siri保存",     desc: "「Hey Siri ここピン」で即記録" },
               ].map((screen) => (
-                <div key={screen.id} className="flex flex-col items-center gap-3">
-                  <IPhoneMockup id={screen.id} label={screen.label} size="sm" />
-                  <div className="text-center space-y-0.5">
-                    <p className="text-xs font-black" style={{ color: "var(--navy)" }}>{screen.label}</p>
+                <div key={screen.id} className="flex-shrink-0 snap-start flex flex-col items-center gap-3">
+                  <IPhoneMockup id={screen.id} label={screen.label} size="md" />
+                  <div className="text-center space-y-1 w-40">
+                    <p className="text-sm font-black" style={{ color: "var(--navy)" }}>{screen.label}</p>
                     <p className="text-xs leading-snug" style={{ color: "var(--text-gray)" }}>{screen.desc}</p>
                   </div>
                 </div>
