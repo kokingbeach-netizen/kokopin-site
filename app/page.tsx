@@ -331,15 +331,13 @@ export default function Home() {
                     声でMAPにピンしよう
                   </p>
                   <p className="text-2xl sm:text-3xl font-bold" style={{ color: "var(--text-dark)" }}>
-                    保存した位置をMapで確認
+                    後で保存した位置をMapで確認
                   </p>
                 </div>
 
                 {/* バッジ行 */}
                 <div className="flex flex-wrap gap-2 justify-center sm:justify-start">
                   {[
-                    { icon: "📱", label: "iPhoneアプリ" },
-                    { icon: "🎙️", label: "Siri対応" },
                     { icon: "🍎", label: "Apple Maps対応" },
                     { icon: "🗺️", label: "Google Maps対応" },
                   ].map((badge) => (
