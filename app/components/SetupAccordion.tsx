@@ -8,7 +8,7 @@ export default function SetupAccordion() {
   return (
     <div
       className="rounded-[28px] overflow-hidden"
-      style={{ backgroundColor: "var(--white)", border: "1px solid var(--border)", boxShadow: "0 4px 20px rgba(0,0,0,0.06)" }}
+      style={{ backgroundColor: "#FFF1F3", border: "2px solid var(--coral)", boxShadow: "0 4px 20px rgba(255,90,111,0.12)" }}
     >
       <button
         className="w-full flex items-center gap-3 p-5 text-left"
@@ -17,7 +17,7 @@ export default function SetupAccordion() {
       >
         <span className="text-2xl">✅</span>
         <div className="flex-1">
-          <p className="text-base font-black" style={{ color: "var(--navy)" }}>最初に設定を確認</p>
+          <p className="text-base font-black" style={{ color: "var(--coral)" }}>最初に設定を確認</p>
           <p className="text-sm" style={{ color: "var(--text-gray)" }}>快適に使うための設定を確認しましょう</p>
         </div>
         <span
@@ -30,7 +30,7 @@ export default function SetupAccordion() {
 
       {open && (
         <>
-          <div className="flex items-start gap-4 p-5" style={{ borderTop: "1px solid var(--border)", borderBottom: "1px solid var(--border)" }}>
+          <div className="flex items-start gap-4 p-5 bg-white" style={{ borderTop: "1px solid #FFCCD3", borderBottom: "1px solid #FFCCD3" }}>
             <span className="text-xl mt-0.5">📍</span>
             <div className="space-y-1">
               <p className="text-base font-black" style={{ color: "var(--navy)" }}>位置情報</p>
@@ -38,7 +38,7 @@ export default function SetupAccordion() {
               <p className="text-sm" style={{ color: "var(--text-gray)" }}>※ 常時許可は不要</p>
             </div>
           </div>
-          <div className="flex items-start gap-4 p-5">
+          <div className="flex items-start gap-4 p-5 bg-white">
             <span className="text-xl mt-0.5">🎙️</span>
             <div className="space-y-1">
               <p className="text-base font-black" style={{ color: "var(--navy)" }}>Siri</p>
