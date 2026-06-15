@@ -297,9 +297,15 @@ export default function Home() {
               {/* ── 左列：テキスト・CTA ── */}
               <div className="flex flex-col items-center sm:items-start text-center sm:text-left gap-5 flex-1">
 
-                {/* ロゴ（モバイルのみ） */}
-                <div className="sm:hidden w-40 h-40 rounded-[45px] overflow-hidden shadow-lg mx-auto">
-                  <Image src="/images/app-icon.png" alt="KokoPin" width={160} height={160} className="object-cover w-full h-full" priority />
+                {/* ロゴ＋バッジ（モバイルのみ） */}
+                <div className="sm:hidden flex flex-col items-center gap-3 mx-auto">
+                  <div className="w-40 h-40 rounded-[45px] overflow-hidden shadow-lg">
+                    <Image src="/images/app-icon.png" alt="KokoPin" width={160} height={160} className="object-cover w-full h-full" priority />
+                  </div>
+                  <div className="flex flex-wrap items-center gap-2 justify-center">
+                    <span className="inline-block text-xs font-bold px-4 py-1.5 rounded-full text-white" style={{ backgroundColor: "var(--coral)" }}>iOS版 近日公開予定</span>
+                    <span className="text-xs font-bold px-3 py-1.5 rounded-full" style={{ backgroundColor: "#FFF4F0", border: "1px solid #FFCCC0", color: "var(--coral)" }}>300円 買い切り</span>
+                  </div>
                 </div>
 
                 {/* アプリ説明 */}
