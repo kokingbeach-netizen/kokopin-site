@@ -526,35 +526,6 @@ export default function Home() {
           </div>
         </section>
 
-        {/* ─────────────────────────────────────────────
-            SECTION 5 : アプリ画面紹介（横スクロール）
-        ───────────────────────────────────────────── */}
-        <section id="app-screens" className="py-14 bg-white">
-          <div className="space-y-8">
-            <div className="text-center space-y-1 px-5 sm:px-10">
-              <h2 className="text-2xl sm:text-3xl font-black tracking-tight" style={{ color: "var(--navy)" }}>
-                アプリ画面紹介
-              </h2>
-            </div>
-            <div className="flex gap-6 overflow-x-auto pb-6 px-5 sm:px-10 snap-x snap-mandatory scrollbar-hide">
-              {[
-                { id: "screen-home",   label: "メイン画面",   desc: "タップして現在地をピン記録" },
-                { id: "screen-list",   label: "保存一覧",     desc: "記録した場所を一覧で確認" },
-                { id: "screen-detail", label: "詳細画面",     desc: "保存した場所の詳細を確認" },
-                { id: "screen-map",    label: "地図で確認",   desc: "Apple Maps・Google Maps対応" },
-                { id: "screen-siri",   label: "Siri保存",     desc: "「Hey Siri ここピン」で即記録" },
-              ].map((screen) => (
-                <div key={screen.id} className="flex-shrink-0 snap-start flex flex-col items-center gap-3">
-                  <IPhoneMockup id={screen.id} label={screen.label} size="md" />
-                  <div className="text-center space-y-1 w-40">
-                    <p className="text-sm font-black" style={{ color: "var(--navy)" }}>{screen.label}</p>
-                    <p className="text-xs leading-snug" style={{ color: "var(--text-gray)" }}>{screen.desc}</p>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
 
         {/* ─────────────────────────────────────────────
             SECTION 6 : プライバシー
