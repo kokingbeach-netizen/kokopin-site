@@ -327,7 +327,7 @@ export default function Home() {
                     height={471}
                     className="w-full max-w-xs sm:max-w-sm h-auto"
                   />
-                  <div className="space-y-1.5">
+                  <div className="space-y-1.5 mt-6 sm:mt-8">
                     <p className="text-2xl sm:text-3xl font-bold" style={{ color: "var(--text-dark)" }}>
                       後で保存した位置をMapで確認
                     </p>
