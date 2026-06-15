@@ -300,8 +300,8 @@ export default function Home() {
 
                 {/* ロゴ＋バッジ（モバイルのみ） */}
                 <div className="sm:hidden flex flex-col items-center gap-3 mx-auto">
-                  <div className="w-40 h-40 rounded-[45px] overflow-hidden shadow-lg">
-                    <Image src="/images/app-icon.png" alt="KokoPin" width={160} height={160} className="object-cover w-full h-full" priority />
+                  <div className="w-32 h-32 rounded-[36px] overflow-hidden shadow-lg">
+                    <Image src="/images/app-icon.png" alt="KokoPin" width={128} height={128} className="object-cover w-full h-full" priority />
                   </div>
                   <div className="flex flex-wrap items-center gap-2 justify-center">
                     <span className="inline-block text-xs font-bold px-4 py-1.5 rounded-full text-white" style={{ backgroundColor: "var(--coral)" }}>iOS版 近日公開予定</span>
