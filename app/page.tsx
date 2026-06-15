@@ -368,16 +368,38 @@ export default function Home() {
                 </div>
               </div>
 
-              {/* ── 右列：iPhoneモックアップ ── */}
-              <div className="flex-shrink-0">
-                <IPhoneMockup
-                  id="hero-app-screen"
-                  label="KokoPinアプリ画面"
-                  size="lg"
-                  image="/images/screen-home.png"
-                />
-              </div>
+            </div>
+          </div>
 
+          {/* ── iPhoneカルーセル（1画面ずつスナップスクロール） ── */}
+          <div className="mt-10 w-full" style={{ borderTop: "1px solid var(--border)" }}>
+            <div className="flex overflow-x-auto snap-x snap-mandatory scrollbar-hide">
+              {[
+                { id: "screen-home",   label: "メイン画面",   desc: "タップして現在地をピン記録",          image: "/images/screen-home.png" },
+                { id: "screen-list",   label: "保存一覧",     desc: "記録した場所を一覧で確認" },
+                { id: "screen-detail", label: "詳細画面",     desc: "保存した場所の詳細を確認" },
+                { id: "screen-map",    label: "地図で確認",   desc: "Apple Maps・Google Maps対応" },
+                { id: "screen-siri",   label: "Siri保存",     desc: "「Hey Siri ここピン」で即記録" },
+              ].map((screen, i) => (
+                <div
+                  key={screen.id}
+                  className="flex-shrink-0 w-full snap-start flex flex-col items-center py-10 gap-5 px-5"
+                >
+                  <IPhoneMockup
+                    id={screen.id}
+                    label={screen.label}
+                    size="lg"
+                    image={"image" in screen ? screen.image : undefined}
+                  />
+                  <div className="text-center space-y-1">
+                    <div className="flex items-center justify-center gap-2">
+                      <span className="text-xs font-bold px-2.5 py-0.5 rounded-full text-white" style={{ backgroundColor: "var(--coral)" }}>{i + 1} / 5</span>
+                      <p className="text-base font-black" style={{ color: "var(--navy)" }}>{screen.label}</p>
+                    </div>
+                    <p className="text-sm" style={{ color: "var(--text-gray)" }}>{screen.desc}</p>
+                  </div>
+                </div>
+              ))}
             </div>
           </div>
 
