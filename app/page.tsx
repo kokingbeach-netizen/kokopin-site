@@ -413,35 +413,13 @@ export default function Home() {
             <h2 className="text-2xl sm:text-3xl font-black tracking-tight" style={{ color: "var(--navy)" }}>
               こんな時に使える
             </h2>
-            <div className="flex gap-3 overflow-x-auto pb-3 snap-x snap-mandatory scrollbar-hide">
-              {[
-                { icon: "🚗",  label: "車の\n運転中" },
-                { icon: "🏍️", label: "バイクで\n移動中" },
-                { icon: "🚲",  label: "自転車で\n移動中" },
-                { icon: "🏃",  label: "ランニング\n中" },
-                { icon: "🚶",  label: "ウォーキング\n中" },
-              ].map((item) => (
-                <div
-                  key={item.label}
-                  className="flex-shrink-0 snap-start flex flex-col items-center justify-center gap-3 rounded-[24px] p-5 text-center"
-                  style={{
-                    backgroundColor: "var(--white)",
-                    border: "1px solid var(--border)",
-                    width: "112px",
-                    minWidth: "112px",
-                    boxShadow: "0 2px 12px rgba(0,0,0,0.04)",
-                  }}
-                >
-                  <span className="text-3xl">{item.icon}</span>
-                  <span
-                    className="text-xs font-bold leading-tight whitespace-pre-line"
-                    style={{ color: "var(--navy)" }}
-                  >
-                    {item.label}
-                  </span>
-                </div>
-              ))}
-            </div>
+            <Image
+              src="/images/こんな時に.png"
+              alt="こんな時に使える"
+              width={938}
+              height={545}
+              className="w-full h-auto rounded-2xl"
+            />
           </div>
         </section>
 
