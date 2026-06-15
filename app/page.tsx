@@ -579,15 +579,12 @@ export default function Home() {
             >
               <h2 className="text-xl font-black" style={{ color: "var(--navy)" }}>料金</h2>
               <div>
-                <p className="text-4xl sm:text-5xl font-black tracking-tight" style={{ color: "var(--navy)" }}>
-                  買い切り
-                </p>
                 <p className="text-xl font-bold mt-2" style={{ color: "var(--coral)" }}>
                   予定価格：300円
                 </p>
               </div>
               <div className="space-y-3">
-                {["広告なし", "サブスクリプションなし"].map((item) => (
+                {["買い切り", "広告なし", "サブスクリプションなし"].map((item) => (
                   <div key={item} className="flex items-center gap-3">
                     <div
                       className="w-6 h-6 rounded-full flex items-center justify-center text-white text-xs font-black flex-shrink-0"
