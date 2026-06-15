@@ -320,9 +320,13 @@ export default function Home() {
                   <p className="text-base sm:text-lg font-bold leading-snug" style={{ color: "var(--navy)" }}>
                     運転中、気になった場所があったら
                   </p>
-                  <p className="text-3xl sm:text-4xl font-black tracking-tight leading-tight" style={{ color: "var(--coral)" }}>
-                    「Hey Siri ここピン」
-                  </p>
+                  <Image
+                    src="/images/mappin.png"
+                    alt="Hey Siri ここピン"
+                    width={1175}
+                    height={471}
+                    className="w-full max-w-xs sm:max-w-sm h-auto"
+                  />
                   <p className="text-xl font-black" style={{ color: "var(--navy)" }}>
                     声でMAPにピンしよう
                   </p>
