@@ -316,13 +316,32 @@ export default function Home() {
                   <p className="text-sm font-bold mt-1" style={{ color: "var(--text-gray)" }}>KokoPin</p>
                 </div>
 
-                {/* iOS版バッジ */}
-                <span
-                  className="inline-block text-xs font-bold px-4 py-1.5 rounded-full text-white"
-                  style={{ backgroundColor: "var(--coral)" }}
-                >
-                  iOS版 近日公開予定
-                </span>
+                {/* アプリ説明・iOS・価格 */}
+                <div className="space-y-2.5">
+                  <p className="text-sm font-bold" style={{ color: "var(--text-gray)" }}>
+                    声でMAPにPinするアプリ
+                  </p>
+                  <div className="flex flex-wrap items-center gap-2 justify-center sm:justify-start">
+                    <span
+                      className="inline-block text-xs font-bold px-4 py-1.5 rounded-full text-white"
+                      style={{ backgroundColor: "var(--coral)" }}
+                    >
+                      iOS版 近日公開予定
+                    </span>
+                    <span
+                      className="flex items-center gap-1 text-xs font-bold px-3 py-1.5 rounded-full"
+                      style={{ backgroundColor: "var(--pale-bg)", border: "1px solid var(--border)", color: "var(--navy)" }}
+                    >
+                      📱 iPhoneアプリ
+                    </span>
+                    <span
+                      className="flex items-center gap-1 text-xs font-bold px-3 py-1.5 rounded-full"
+                      style={{ backgroundColor: "#FFF4F0", border: "1px solid #FFCCC0", color: "var(--coral)" }}
+                    >
+                      ¥300 買い切り
+                    </span>
+                  </div>
+                </div>
 
                 {/* メインコピー */}
                 <div className="space-y-2">
