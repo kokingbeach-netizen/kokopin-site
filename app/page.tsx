@@ -431,7 +431,13 @@ export default function Home() {
           style={{ backgroundColor: "var(--navy)" }}
         >
           <div className="max-w-2xl mx-auto space-y-10">
-            <ImagePlaceholder id="moving-scene-visual" label="ここに移動中の景色画像" aspect="16/9" />
+            <Image
+              src="/images/kokoPINイラスト.png"
+              alt="ここピン! イラスト"
+              width={1774}
+              height={887}
+              className="w-full h-auto rounded-2xl"
+            />
             <div className="space-y-5 text-center">
               <p className="text-lg sm:text-xl font-bold leading-relaxed text-white/80">
                 スマホが使えない、手が離せない時、<br />
