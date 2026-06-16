@@ -430,7 +430,7 @@ export default function Home() {
         >
           <div className="max-w-2xl mx-auto space-y-6">
             <h2 className="text-2xl sm:text-3xl font-black tracking-tight" style={{ color: "var(--navy)" }}>
-              こんな時に使える
+              こんな時に使える、<br />つまり手が離せない時、
             </h2>
             <Image
               src="/images/こんな時に.webp"
