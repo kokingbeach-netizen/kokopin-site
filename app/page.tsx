@@ -460,7 +460,8 @@ export default function Home() {
               <p className="text-lg sm:text-xl font-bold leading-relaxed" style={{ color: "var(--text-gray)" }}>
                 スマホが使えない時、<br />
                 流れる景色の中で、<br />
-                気になるお店や景色を見つけたことありますよね？
+                気になるお店や景色を<br />
+                見つけたことありますよね？
               </p>
               <p className="text-2xl sm:text-3xl font-black tracking-tight" style={{ color: "var(--coral)" }}>
                 その位置を声で一瞬で保存できる
