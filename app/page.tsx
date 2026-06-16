@@ -386,7 +386,7 @@ export default function Home() {
                 { id: "screen-list",   label: "保存一覧",     desc: "記録した場所を一覧で確認",             image: "/images/screen-list.png" },
                 { id: "screen-detail", label: "詳細画面",     desc: "保存した場所の詳細を確認",             image: "/images/screen-detail.png" },
                 { id: "screen-map",    label: "地図で確認",   desc: "Apple Maps・Google Maps対応",          image: "/images/screen-map.png" },
-                { id: "screen-siri",   label: "Siri保存",     desc: "「Hey Siri ここピン」で即記録",        image: "/images/screen-detail5.png" },
+                { id: "screen-siri",   label: "Hey Siri ここピン！", desc: "SiriだけでPin",                image: "/images/screen-detail5.png" },
               ].map((screen, i) => (
                 <div
                   key={screen.id}
