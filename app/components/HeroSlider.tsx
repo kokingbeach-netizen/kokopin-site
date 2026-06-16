@@ -14,33 +14,65 @@ const INTERVAL = 4000;
 
 export default function HeroSlider() {
   const [current, setCurrent] = useState(0);
+  // ズームアニメーションを再起動するためのキー（スライドが表示されるたびにインクリメント）
+  const [animKeys, setAnimKeys] = useState([0, 0, 0, 0]);
 
   useEffect(() => {
     const timer = setInterval(() => {
-      setCurrent((c) => (c + 1) % IMAGES.length);
+      setCurrent((c) => {
+        const next = (c + 1) % IMAGES.length;
+        setAnimKeys((prev) => {
+          const keys = [...prev];
+          keys[next] = prev[next] + 1;
+          return keys;
+        });
+        return next;
+      });
     }, INTERVAL);
     return () => clearInterval(timer);
   }, []);
 
   return (
     <div
-      className="w-full relative"
+      className="w-full relative overflow-hidden"
       style={{ aspectRatio: "16/9", borderBottom: "1px solid var(--border)" }}
     >
+      <style>{`
+        @keyframes heroZoom {
+          from { transform: scale(1); }
+          to   { transform: scale(1.07); }
+        }
+      `}</style>
+
       {IMAGES.map((src, i) => (
-        <Image
+        <div
           key={src}
-          src={src}
-          alt={i === 0 ? "声でMAPにピンしよう - ここピン!" : ""}
-          fill
-          className="object-cover"
+          className="absolute inset-0"
           style={{
             opacity: i === current ? 1 : 0,
-            transition: "opacity 1200ms ease-in-out",
+            transition: "opacity 600ms ease-in-out",
           }}
-          priority={i === 0}
-          aria-hidden={i !== current}
-        />
+        >
+          {/* 画像2〜4はゆっくりズームイン */}
+          <div
+            key={i > 0 ? animKeys[i] : "static"}
+            className="w-full h-full"
+            style={
+              i > 0
+                ? { animation: `heroZoom ${INTERVAL + 2000}ms ease-out forwards` }
+                : {}
+            }
+          >
+            <Image
+              src={src}
+              alt={i === 0 ? "声でMAPにピンしよう - ここピン!" : ""}
+              fill
+              className="object-cover"
+              priority={i === 0}
+              aria-hidden={i !== current}
+            />
+          </div>
+        </div>
       ))}
 
       {/* ドットインジケーター */}
@@ -48,7 +80,14 @@ export default function HeroSlider() {
         {IMAGES.map((_, i) => (
           <button
             key={i}
-            onClick={() => setCurrent(i)}
+            onClick={() => {
+              setAnimKeys((prev) => {
+                const keys = [...prev];
+                keys[i] = prev[i] + 1;
+                return keys;
+              });
+              setCurrent(i);
+            }}
             className="rounded-full transition-all duration-300"
             style={{
               width: i === current ? "20px" : "6px",
