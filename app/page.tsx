@@ -627,6 +627,45 @@ export default function Home() {
         </section>
 
         {/* ─────────────────────────────────────────────
+            開発秘話
+        ───────────────────────────────────────────── */}
+        <section className="px-5 sm:px-10 py-16" style={{ backgroundColor: "var(--pale-bg)" }}>
+          <div className="max-w-2xl mx-auto">
+            <div
+              className="rounded-[28px] p-8 sm:p-10 space-y-6"
+              style={{ backgroundColor: "var(--white)", border: "1px solid var(--border)", boxShadow: "0 4px 20px rgba(0,0,0,0.04)" }}
+            >
+              <div className="space-y-1">
+                <p className="text-xs font-black tracking-widest uppercase" style={{ color: "var(--coral)" }}>Story</p>
+                <h2 className="text-xl sm:text-2xl font-black tracking-tight" style={{ color: "var(--navy)" }}>開発秘話</h2>
+              </div>
+              <div className="space-y-5" style={{ color: "var(--text-gray)" }}>
+                <p className="text-base sm:text-lg leading-loose">
+                  私はよく、ドライブをします。
+                </p>
+                <p className="text-base sm:text-lg leading-loose">
+                  その道すがら、ふと目に飛び込んでくる瞬間があります。<br />
+                  <span className="font-bold italic" style={{ color: "var(--navy)" }}>「あ、何このカフェ！？」</span><br />
+                  <span className="font-bold italic" style={{ color: "var(--navy)" }}>「げ！この景色、最高ーっ！」</span>
+                </p>
+                <p className="text-base sm:text-lg leading-loose">
+                  でも、車をすぐに停められない。<br />
+                  気づけばいつも、その場所を通り過ぎてしまっていた。
+                </p>
+                <p className="text-base sm:text-lg leading-loose">
+                  それでも心のどこかで思っていました。<br />
+                  <span className="font-bold" style={{ color: "var(--navy)" }}>いつかは、行くぞ。</span>
+                </p>
+                <p className="text-base sm:text-lg leading-loose">
+                  そのためにその場をPinしておけたら——<br />
+                  そんなささやかな願いから、ここピンは生まれました。
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* ─────────────────────────────────────────────
             ページリンク
         ───────────────────────────────────────────── */}
         <section
