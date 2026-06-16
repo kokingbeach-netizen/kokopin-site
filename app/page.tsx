@@ -430,7 +430,7 @@ export default function Home() {
         >
           <div className="max-w-2xl mx-auto space-y-6">
             <h2 className="text-2xl sm:text-3xl font-black tracking-tight" style={{ color: "var(--navy)" }}>
-              こんな時に使える、<br />つまり手が離せない時、
+              こんな時に使える、<br />つまり手が離せない時
             </h2>
             <Image
               src="/images/こんな時に.webp"
@@ -458,7 +458,7 @@ export default function Home() {
           <div className="max-w-2xl mx-auto px-5 sm:px-10 space-y-5 mt-6">
             <div className="space-y-5 text-center">
               <p className="text-lg sm:text-xl font-bold leading-relaxed" style={{ color: "var(--text-gray)" }}>
-                スマホが使えない、手が離せない時、<br />
+                スマホが使えない時、<br />
                 流れる景色の中で、<br />
                 気になる店や景色を見つけたことありますよね？
               </p>
