@@ -10,31 +10,50 @@ const IMAGES = [
   "/images/hero-drive4.jpg",
 ];
 
-// スライドごとの表示時間（ms）
 const DURATIONS = [4000, 2000, 2000, 2000];
+const WIPE_MS = 900;
 
 export default function HeroSlider() {
-  const [current, setCurrent] = useState(0);
-  // ズームアニメーションを再起動するためのキー（スライドが表示されるたびにインクリメント）
-  const [animKeys, setAnimKeys] = useState([0, 0, 0, 0]);
+  const [current, setCurrent]   = useState(0);
+  const [incoming, setIncoming] = useState<number | null>(null);
+  const [fromRight, setFromRight] = useState(true);
+  const [entering, setEntering] = useState(false);
+  const [zoomKeys, setZoomKeys] = useState([0, 0, 0, 0]);
 
   useEffect(() => {
-    let timer: ReturnType<typeof setTimeout>;
-    const advance = (c: number) => {
-      timer = setTimeout(() => {
-        const next = (c + 1) % IMAGES.length;
-        setAnimKeys((prev) => {
-          const keys = [...prev];
-          keys[next] = prev[next] + 1;
-          return keys;
-        });
+    let t1: ReturnType<typeof setTimeout>;
+    let t2: ReturnType<typeof setTimeout>;
+
+    const startTransition = (c: number) => {
+      const next = (c + 1) % IMAGES.length;
+      const dir  = Math.random() < 0.5;
+
+      setFromRight(dir);
+      setIncoming(next);
+      setZoomKeys((prev) => {
+        const k = [...prev];
+        k[next] = k[next] + 1;
+        return k;
+      });
+
+      // 2フレーム後にwipeアニメ開始（初期位置を一度描画させてから）
+      requestAnimationFrame(() =>
+        requestAnimationFrame(() => setEntering(true))
+      );
+
+      t2 = setTimeout(() => {
         setCurrent(next);
-        advance(next);
-      }, DURATIONS[c]);
+        setIncoming(null);
+        setEntering(false);
+        t1 = setTimeout(() => startTransition(next), DURATIONS[next]);
+      }, WIPE_MS);
     };
-    advance(0);
-    return () => clearTimeout(timer);
+
+    t1 = setTimeout(() => startTransition(0), DURATIONS[0]);
+    return () => { clearTimeout(t1); clearTimeout(t2); };
   }, []);
+
+  const dotIndex = incoming !== null ? incoming : current;
 
   return (
     <div
@@ -44,61 +63,62 @@ export default function HeroSlider() {
       <style>{`
         @keyframes heroZoom {
           from { transform: scale(1); }
-          to   { transform: scale(1.07); }
+          to   { transform: scale(1.1); }
         }
       `}</style>
 
-      {IMAGES.map((src, i) => (
+      {/* 現在の画像（下に敷いておく） */}
+      <div className="absolute inset-0">
+        <Image
+          src={IMAGES[current]}
+          alt="声でMAPにピンしよう - ここピン!"
+          fill
+          className="object-cover"
+          priority={current === 0}
+        />
+      </div>
+
+      {/* 入ってくる画像（サイドからワイプ＋ズーム） */}
+      {incoming !== null && (
         <div
-          key={src}
           className="absolute inset-0"
           style={{
-            opacity: i === current ? 1 : 0,
-            transition: "opacity 600ms ease-in-out",
+            transform: entering
+              ? "translateX(0)"
+              : `translateX(${fromRight ? "100%" : "-100%"})`,
+            transition: entering
+              ? `transform ${WIPE_MS}ms cubic-bezier(0.76, 0, 0.24, 1)`
+              : "none",
           }}
         >
-          {/* 画像2〜4はゆっくりズームイン */}
           <div
-            key={i > 0 ? animKeys[i] : "static"}
+            key={zoomKeys[incoming]}
             className="w-full h-full"
-            style={
-              i > 0
-                ? { animation: `heroZoom 6000ms linear forwards` }
-                : {}
-            }
+            style={{ animation: `heroZoom 3500ms linear forwards` }}
           >
             <Image
-              src={src}
-              alt={i === 0 ? "声でMAPにピンしよう - ここピン!" : ""}
+              src={IMAGES[incoming]}
+              alt=""
               fill
               className="object-cover"
-              priority={i === 0}
-              aria-hidden={i !== current}
+              aria-hidden
             />
           </div>
         </div>
-      ))}
+      )}
 
       {/* ドットインジケーター */}
       <div className="absolute bottom-3 left-1/2 -translate-x-1/2 flex gap-1.5 z-10">
         {IMAGES.map((_, i) => (
-          <button
+          <div
             key={i}
-            onClick={() => {
-              setAnimKeys((prev) => {
-                const keys = [...prev];
-                keys[i] = prev[i] + 1;
-                return keys;
-              });
-              setCurrent(i);
-            }}
             className="rounded-full transition-all duration-300"
             style={{
-              width: i === current ? "20px" : "6px",
+              width: i === dotIndex ? "20px" : "6px",
               height: "6px",
-              backgroundColor: i === current ? "white" : "rgba(255,255,255,0.5)",
+              backgroundColor:
+                i === dotIndex ? "white" : "rgba(255,255,255,0.5)",
             }}
-            aria-label={`スライド ${i + 1}`}
           />
         ))}
       </div>
