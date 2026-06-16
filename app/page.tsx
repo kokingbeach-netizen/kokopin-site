@@ -321,7 +321,7 @@ export default function Home() {
                 {/* メインコピー */}
                 <div className="mt-6 sm:mt-8 rounded-[24px] px-5 py-6 space-y-4" style={{ backgroundColor: "var(--pale-bg)", border: "1px solid var(--border)" }}>
                   <p className="text-2xl sm:text-3xl font-black leading-snug" style={{ color: "var(--navy)" }}>
-                    運転中、気になった場所に
+                    運転中、気になる場所を見つけたら
                   </p>
                   <Image
                     src="/images/mappin.webp"
