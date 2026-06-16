@@ -44,7 +44,7 @@ export default function HeroSlider() {
       <style>{`
         @keyframes heroZoom {
           from { transform: scale(1); }
-          to   { transform: scale(1.07); }
+          to   { transform: scale(1.25); }
         }
       `}</style>
 
@@ -63,7 +63,7 @@ export default function HeroSlider() {
             className="w-full h-full"
             style={
               i > 0
-                ? { animation: `heroZoom 6000ms linear forwards` }
+                ? { animation: `heroZoom 2500ms linear forwards` }
                 : {}
             }
           >
