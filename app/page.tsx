@@ -327,8 +327,8 @@ export default function Home() {
 
 
                 {/* メインコピー */}
-                <div className="space-y-2 mt-4 sm:mt-6">
-                  <p className="text-base sm:text-lg font-bold leading-snug" style={{ color: "var(--navy)" }}>
+                <div className="mt-6 sm:mt-8 rounded-[24px] px-5 py-6 space-y-4" style={{ backgroundColor: "var(--pale-bg)", border: "1px solid var(--border)" }}>
+                  <p className="text-xl sm:text-2xl font-black leading-snug" style={{ color: "var(--navy)" }}>
                     運転中、気になった場所があったら
                   </p>
                   <Image
@@ -338,7 +338,7 @@ export default function Home() {
                     height={471}
                     className="w-full max-w-xs sm:max-w-sm h-auto"
                   />
-                  <div className="space-y-1.5 mt-6 sm:mt-8">
+                  <div className="space-y-2">
                     <p className="text-2xl sm:text-3xl font-bold" style={{ color: "var(--text-dark)" }}>
                       後でアプリから保存した位置をMapで確認
                     </p>
