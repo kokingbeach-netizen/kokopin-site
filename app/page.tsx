@@ -383,7 +383,7 @@ export default function Home() {
             <div className="flex overflow-x-auto snap-x snap-mandatory scrollbar-hide">
               {[
                 { id: "screen-home",   label: "メイン画面",   desc: "タップして現在地をピン記録。手動でここピンもできます",          image: "/images/screen-home.png" },
-                { id: "screen-list",   label: "保存一覧",     desc: "記録した場所を一覧で確認" },
+                { id: "screen-list",   label: "保存一覧",     desc: "記録した場所を一覧で確認",             image: "/images/screen-list.png" },
                 { id: "screen-detail", label: "詳細画面",     desc: "保存した場所の詳細を確認" },
                 { id: "screen-map",    label: "地図で確認",   desc: "Apple Maps・Google Maps対応" },
                 { id: "screen-siri",   label: "Siri保存",     desc: "「Hey Siri ここピン」で即記録" },
