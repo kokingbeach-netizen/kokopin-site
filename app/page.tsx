@@ -313,7 +313,7 @@ export default function Home() {
                       backgroundClip: "text",
                     }}
                   >
-                    声でMAPにPinするアプリ
+                    声でMapにPinするアプリ
                   </p>
                 </div>
 
