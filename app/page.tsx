@@ -3,6 +3,7 @@ import Link from "next/link";
 import Footer from "./components/Footer";
 import FaqAccordion from "./components/FaqAccordion";
 import SetupAccordion from "./components/SetupAccordion";
+import HeroSlider from "./components/HeroSlider";
 
 // ── 画像プレースホルダー ────────────────────────────────────────────────────────
 function ImagePlaceholder({
@@ -279,17 +280,8 @@ export default function Home() {
           className="bg-white pb-12"
           style={{ borderBottom: "1px solid var(--border)" }}
         >
-          {/* メインビジュアル（歩いている女性イラスト） */}
-          <div className="w-full overflow-hidden" style={{ borderBottom: "1px solid var(--border)" }}>
-            <Image
-              src="/images/hero-drive.png"
-              alt="声でMAPにピンしよう - ここピン!"
-              width={1200}
-              height={600}
-              className="w-full h-auto object-cover"
-              priority
-            />
-          </div>
+          {/* メインビジュアル（自動スライダー） */}
+          <HeroSlider />
 
           {/* ── コンテンツ（PC：2カラム / モバイル：縦積み） ── */}
           <div className="px-5 sm:px-10 pt-10">
