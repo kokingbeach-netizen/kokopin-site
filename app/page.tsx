@@ -379,7 +379,13 @@ export default function Home() {
           </div>
 
           {/* ── iPhoneカルーセル（1画面ずつスナップスクロール） ── */}
-          <div className="mt-10 w-full" style={{ borderTop: "1px solid var(--border)" }}>
+          <div className="mt-10 w-full relative" style={{ borderTop: "1px solid var(--border)" }}>
+            {/* 右矢印ヒント */}
+            <div className="pointer-events-none absolute right-3 top-1/2 -translate-y-1/2 z-10 flex flex-col items-center gap-1 opacity-40">
+              <svg width="20" height="36" viewBox="0 0 20 36" fill="none">
+                <polyline points="4,4 16,18 4,32" stroke="var(--navy)" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"/>
+              </svg>
+            </div>
             <div className="flex overflow-x-auto snap-x snap-mandatory scrollbar-hide">
               {[
                 { id: "screen-home",   label: "メイン画面",   desc: "タップして現在地をピン記録。手動でここピンもできます",          image: "/images/screen-home.png" },
