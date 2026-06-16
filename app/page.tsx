@@ -379,13 +379,7 @@ export default function Home() {
           </div>
 
           {/* ── iPhoneカルーセル（1画面ずつスナップスクロール） ── */}
-          <div className="mt-10 w-full relative" style={{ borderTop: "1px solid var(--border)" }}>
-            {/* 右矢印ヒント */}
-            <div className="pointer-events-none absolute right-3 top-1/2 -translate-y-1/2 z-10 flex flex-col items-center gap-1 opacity-40">
-              <svg width="20" height="36" viewBox="0 0 20 36" fill="none">
-                <polyline points="4,4 16,18 4,32" stroke="var(--navy)" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"/>
-              </svg>
-            </div>
+          <div className="mt-10 w-full" style={{ borderTop: "1px solid var(--border)" }}>
             <div className="flex overflow-x-auto snap-x snap-mandatory scrollbar-hide">
               {[
                 { id: "screen-home",   label: "メイン画面",   desc: "タップして現在地をピン記録。手動でここピンもできます",          image: "/images/screen-home.png" },
@@ -393,11 +387,27 @@ export default function Home() {
                 { id: "screen-detail", label: "詳細画面",     desc: "保存した場所の詳細を確認",             image: "/images/screen-detail.png" },
                 { id: "screen-map",    label: "地図で確認",   desc: "Apple Maps・Google Maps対応",          image: "/images/screen-map.png" },
                 { id: "screen-siri",   label: "Hey Siri ここピン！", desc: "SiriだけでPin",                image: "/images/screen-detail5.png" },
-              ].map((screen, i) => (
+              ].map((screen, i, arr) => (
                 <div
                   key={screen.id}
-                  className="flex-shrink-0 w-full snap-start flex flex-col items-center py-10 gap-5 px-5"
+                  className="flex-shrink-0 w-full snap-start relative flex flex-col items-center py-10 gap-5 px-5"
                 >
+                  {/* 左矢印（2枚目以降） */}
+                  {i > 0 && (
+                    <div className="pointer-events-none absolute left-2 top-1/2 -translate-y-1/2 z-10 opacity-35">
+                      <svg width="10" height="18" viewBox="0 0 10 18" fill="none">
+                        <polyline points="8,2 2,9 8,16" stroke="var(--navy)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                      </svg>
+                    </div>
+                  )}
+                  {/* 右矢印（最後以外） */}
+                  {i < arr.length - 1 && (
+                    <div className="pointer-events-none absolute right-2 top-1/2 -translate-y-1/2 z-10 opacity-35">
+                      <svg width="10" height="18" viewBox="0 0 10 18" fill="none">
+                        <polyline points="2,2 8,9 2,16" stroke="var(--navy)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                      </svg>
+                    </div>
+                  )}
                   <IPhoneMockup
                     id={screen.id}
                     label={screen.label}
