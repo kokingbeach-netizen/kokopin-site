@@ -10,7 +10,8 @@ const IMAGES = [
   "/images/hero-drive4.png",
 ];
 
-const INTERVAL = 4000;
+// スライドごとの表示時間（ms）
+const DURATIONS = [4000, 2000, 2000, 2000];
 
 export default function HeroSlider() {
   const [current, setCurrent] = useState(0);
@@ -18,18 +19,21 @@ export default function HeroSlider() {
   const [animKeys, setAnimKeys] = useState([0, 0, 0, 0]);
 
   useEffect(() => {
-    const timer = setInterval(() => {
-      setCurrent((c) => {
+    let timer: ReturnType<typeof setTimeout>;
+    const advance = (c: number) => {
+      timer = setTimeout(() => {
         const next = (c + 1) % IMAGES.length;
         setAnimKeys((prev) => {
           const keys = [...prev];
           keys[next] = prev[next] + 1;
           return keys;
         });
-        return next;
-      });
-    }, INTERVAL);
-    return () => clearInterval(timer);
+        setCurrent(next);
+        advance(next);
+      }, DURATIONS[c]);
+    };
+    advance(0);
+    return () => clearTimeout(timer);
   }, []);
 
   return (
@@ -59,7 +63,7 @@ export default function HeroSlider() {
             className="w-full h-full"
             style={
               i > 0
-                ? { animation: `heroZoom ${INTERVAL + 2000}ms ease-out forwards` }
+                ? { animation: `heroZoom ${DURATIONS[i] + 600}ms ease-out forwards` }
                 : {}
             }
           >
