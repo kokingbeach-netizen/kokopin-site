@@ -163,7 +163,7 @@ function LeftSidebar() {
       />
       <div className="relative z-10 flex flex-col items-center text-center px-8 gap-7">
         <div className="w-20 h-20 rounded-[20px] overflow-hidden shadow-lg">
-          <Image src="/images/app-icon.png" alt="KokoPin" width={80} height={80} className="object-cover w-full h-full" priority />
+          <Image src="/images/app-icon.webp" alt="KokoPin" width={80} height={80} className="object-cover w-full h-full" priority />
         </div>
         <Image
           src="/images/title-text.png"
@@ -293,7 +293,7 @@ export default function Home() {
                 {/* ロゴ＋バッジ（モバイルのみ） */}
                 <div className="sm:hidden flex flex-col items-center gap-3 mx-auto">
                   <div className="w-32 h-32 rounded-[36px] overflow-hidden shadow-lg">
-                    <Image src="/images/app-icon.png" alt="KokoPin" width={128} height={128} className="object-cover w-full h-full" priority />
+                    <Image src="/images/app-icon.webp" alt="KokoPin" width={128} height={128} className="object-cover w-full h-full" priority />
                   </div>
                   <div className="flex flex-wrap items-center gap-2 justify-center">
                     <span className="inline-block text-xs font-bold px-4 py-1.5 rounded-full text-white" style={{ backgroundColor: "var(--coral)" }}>iOS版 近日公開予定</span>
@@ -324,7 +324,7 @@ export default function Home() {
                     運転中、気になった場所に
                   </p>
                   <Image
-                    src="/images/mappin.png"
+                    src="/images/mappin.webp"
                     alt="Hey Siri ここピン"
                     width={1175}
                     height={471}
@@ -374,11 +374,11 @@ export default function Home() {
           <div className="mt-10 w-full" style={{ borderTop: "1px solid var(--border)" }}>
             <div className="flex overflow-x-auto snap-x snap-mandatory scrollbar-hide">
               {[
-                { id: "screen-home",   label: "メイン画面",   desc: "タップして現在地をピン記録。手動でここピンもできます",          image: "/images/screen-home.png" },
-                { id: "screen-list",   label: "保存一覧",     desc: "記録した場所を一覧で確認",             image: "/images/screen-list.png" },
-                { id: "screen-detail", label: "詳細画面",     desc: "保存した場所の詳細を確認",             image: "/images/screen-detail.png" },
-                { id: "screen-map",    label: "地図で確認",   desc: "Apple Maps・Google Maps対応",          image: "/images/screen-map.png" },
-                { id: "screen-siri",   label: "Hey Siri ここピン！", desc: "SiriだけでPin",                image: "/images/screen-detail5.png" },
+                { id: "screen-home",   label: "メイン画面",   desc: "タップして現在地をピン記録。手動でここピンもできます",          image: "/images/screen-home.webp" },
+                { id: "screen-list",   label: "保存一覧",     desc: "記録した場所を一覧で確認",             image: "/images/screen-list.webp" },
+                { id: "screen-detail", label: "詳細画面",     desc: "保存した場所の詳細を確認",             image: "/images/screen-detail.webp" },
+                { id: "screen-map",    label: "地図で確認",   desc: "Apple Maps・Google Maps対応",          image: "/images/screen-map.webp" },
+                { id: "screen-siri",   label: "Hey Siri ここピン！", desc: "SiriだけでPin",                image: "/images/screen-detail5.webp" },
               ].map((screen, i, arr) => (
                 <div
                   key={screen.id}
@@ -433,7 +433,7 @@ export default function Home() {
               こんな時に使える
             </h2>
             <Image
-              src="/images/こんな時に.png"
+              src="/images/こんな時に.webp"
               alt="こんな時に使える"
               width={938}
               height={545}
@@ -449,7 +449,7 @@ export default function Home() {
           className="pb-10 bg-white"
         >
           <Image
-            src="/images/kokoPINイラスト.png"
+            src="/images/kokoPINイラスト.webp"
             alt="ここピン! イラスト"
             width={1774}
             height={887}

@@ -4,10 +4,10 @@ import Image from "next/image";
 import { useEffect, useState } from "react";
 
 const IMAGES = [
-  "/images/hero-drive.png",
-  "/images/hero-drive2.png",
-  "/images/hero-drive3.png",
-  "/images/hero-drive4.png",
+  "/images/hero-drive.jpg",
+  "/images/hero-drive2.jpg",
+  "/images/hero-drive3.jpg",
+  "/images/hero-drive4.jpg",
 ];
 
 // スライドごとの表示時間（ms）
