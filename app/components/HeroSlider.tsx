@@ -63,7 +63,7 @@ export default function HeroSlider() {
             className="w-full h-full"
             style={
               i > 0
-                ? { animation: `heroZoom ${DURATIONS[i] + 600}ms ease-out forwards` }
+                ? { animation: `heroZoom ${DURATIONS[i]}ms ease-in-out forwards` }
                 : {}
             }
           >
