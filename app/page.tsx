@@ -458,8 +458,8 @@ export default function Home() {
           <div className="max-w-2xl mx-auto px-5 sm:px-10 space-y-5 mt-6">
             <div className="space-y-5 text-center">
               <p className="text-lg sm:text-xl font-bold leading-relaxed" style={{ color: "var(--text-gray)" }}>
-                スマホが使えない時、<br />
-                流れる景色の中で、<br />
+                スマホが使えない時<br />
+                流れる景色の中で<br />
                 気になるお店や景色を<br />
                 見つけたことありますよね？
               </p>
