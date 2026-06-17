@@ -4,6 +4,7 @@ import Footer from "./components/Footer";
 import FaqAccordion from "./components/FaqAccordion";
 import SetupAccordion from "./components/SetupAccordion";
 import HeroSlider from "./components/HeroSlider";
+import IPhoneCarousel from "./components/IPhoneCarousel";
 
 // ── 画像プレースホルダー ────────────────────────────────────────────────────────
 function ImagePlaceholder({
@@ -370,53 +371,8 @@ export default function Home() {
             </div>
           </div>
 
-          {/* ── iPhoneカルーセル（1画面ずつスナップスクロール） ── */}
-          <div className="mt-10 w-full" style={{ borderTop: "1px solid var(--border)" }}>
-            <div className="flex overflow-x-auto snap-x snap-mandatory scrollbar-hide">
-              {[
-                { id: "screen-home",   label: "メイン画面",   desc: "タップして現在地をピン記録。手動でここピンもできます",          image: "/images/screen-home.webp" },
-                { id: "screen-list",   label: "保存一覧",     desc: "記録した場所を一覧で確認",             image: "/images/screen-list.webp" },
-                { id: "screen-detail", label: "詳細画面",     desc: "保存した場所の詳細を確認",             image: "/images/screen-detail.webp" },
-                { id: "screen-map",    label: "地図で確認",   desc: "Apple Maps・Google Maps対応",          image: "/images/screen-map.webp" },
-                { id: "screen-siri",   label: "Hey Siri ここピン！", desc: "SiriだけでPin",                image: "/images/screen-detail5.webp" },
-              ].map((screen, i, arr) => (
-                <div
-                  key={screen.id}
-                  className="flex-shrink-0 w-full snap-start relative flex flex-col items-center py-10 gap-5 px-5"
-                >
-                  {/* 左矢印（2枚目以降） */}
-                  {i > 0 && (
-                    <div className="pointer-events-none absolute left-2 top-1/2 -translate-y-1/2 z-10 opacity-35">
-                      <svg width="10" height="18" viewBox="0 0 10 18" fill="none">
-                        <polyline points="8,2 2,9 8,16" stroke="var(--navy)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                      </svg>
-                    </div>
-                  )}
-                  {/* 右矢印（最後以外） */}
-                  {i < arr.length - 1 && (
-                    <div className="pointer-events-none absolute right-2 top-1/2 -translate-y-1/2 z-10 opacity-35">
-                      <svg width="10" height="18" viewBox="0 0 10 18" fill="none">
-                        <polyline points="2,2 8,9 2,16" stroke="var(--navy)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                      </svg>
-                    </div>
-                  )}
-                  <IPhoneMockup
-                    id={screen.id}
-                    label={screen.label}
-                    size="lg"
-                    image={"image" in screen ? screen.image : undefined}
-                  />
-                  <div className="text-center space-y-1">
-                    <div className="flex items-center justify-center gap-2">
-                      <span className="text-xs font-bold px-2.5 py-0.5 rounded-full text-white" style={{ backgroundColor: "var(--coral)" }}>{i + 1} / 5</span>
-                      <p className="text-base font-black" style={{ color: "var(--navy)" }}>{screen.label}</p>
-                    </div>
-                    <p className="text-sm" style={{ color: "var(--text-gray)" }}>{screen.desc}</p>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
+          {/* ── iPhoneカルーセル ── */}
+          <IPhoneCarousel />
 
         </section>
 
