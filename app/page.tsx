@@ -587,7 +587,32 @@ export default function Home() {
             <h2 className="text-2xl sm:text-3xl font-black tracking-tight" style={{ color: "var(--navy)" }}>
               よくある質問
             </h2>
+
+            {/* 案内カード */}
+            <div
+              className="rounded-[18px] px-5 py-4 flex gap-3 items-start"
+              style={{ backgroundColor: "#FFF4F0", border: "1px solid #FFCFC0" }}
+            >
+              <span className="text-lg mt-0.5">🎙️</span>
+              <div className="space-y-1">
+                <p className="text-sm font-bold" style={{ color: "var(--coral)" }}>快適にご利用いただくために</p>
+                <p className="text-xs leading-relaxed" style={{ color: "var(--text-gray)" }}>
+                  KokoPinはAppleのSiriを利用して動作します。<br />
+                  周囲の騒音やイヤホン・マイクの状態によっては、「Hey Siri」の認識率が低下する場合があります。
+                </p>
+              </div>
+            </div>
+
             <FaqAccordion />
+
+            {/* お問い合わせ */}
+            <p className="text-sm text-center" style={{ color: "var(--text-gray)" }}>
+              解決しない場合は、
+              <Link href="/support" className="font-bold underline underline-offset-2 hover:opacity-70 transition-opacity" style={{ color: "var(--coral)" }}>
+                お気軽にお問い合わせください
+              </Link>
+              。
+            </p>
           </div>
         </section>
 
