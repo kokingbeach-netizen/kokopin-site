@@ -388,6 +388,9 @@ export default function Home() {
             <h2 className="text-2xl sm:text-3xl font-black tracking-tight" style={{ color: "var(--navy)" }}>
               こんな時に使える—<br />つまり手が離せない時
             </h2>
+            <p className="text-xs" style={{ color: "var(--text-gray)" }}>
+              AirPodsなどのイヤホンを使用することでより快適にご利用いただけます。
+            </p>
             <Image
               src="/images/こんな時に.webp"
               alt="こんな時に使える"
