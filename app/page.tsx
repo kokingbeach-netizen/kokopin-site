@@ -389,7 +389,7 @@ export default function Home() {
               こんな時に使える—<br />つまり手が離せない時
             </h2>
             <p className="text-xs" style={{ color: "var(--text-gray)" }}>
-              AirPodsなどのイヤホンを使用することでより快適にご利用いただけます。
+              AirPodsなどのイヤホンを使用することでより快適に。
             </p>
             <Image
               src="/images/こんな時に.webp"
