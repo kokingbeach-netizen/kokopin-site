@@ -12,7 +12,7 @@ const SETTINGS = [
   { label: "マイクを許可" },
   { label: "音声認識を許可" },
   { label: "Wi-Fiまたはモバイル通信に接続" },
-  { label: "周囲が騒がしい場所では、大きめの声ではっきり話す" },
+  { label: "周囲が騒がしい場所では、Siriが認識しづらい場合があります。" },
   { label: "周囲の音が聞こえる状態で利用する" },
 ];
 
@@ -29,11 +29,11 @@ export default function SiriSettingsCard() {
         <span className="text-lg mt-0.5">🎤</span>
         <div className="flex-1 space-y-1">
           <p className="text-sm font-bold" style={{ color: "var(--coral)" }}>
-            快適にご利用いただくために
+            Siriの推奨設定
           </p>
           <p className="text-xs leading-relaxed" style={{ color: "var(--text-gray)" }}>
             KokoPinはAppleのSiriを利用して動作します。<br />
-            反応しない場合は、推奨設定をご確認ください。
+            Siriが反応しない場合は、以下の推奨設定をご確認ください。
           </p>
           <button
             onClick={() => setOpen(!open)}
@@ -41,7 +41,7 @@ export default function SiriSettingsCard() {
             style={{ color: "var(--coral)" }}
             aria-expanded={open}
           >
-            {open ? "閉じる ▲" : "推奨設定を見る ▼"}
+            {open ? "▲ 閉じる" : "▼ Siriの推奨設定を見る"}
           </button>
         </div>
       </div>
@@ -65,7 +65,7 @@ export default function SiriSettingsCard() {
                   <ul className="mt-1 ml-5 space-y-1">
                     {item.sub.map((s, j) => (
                       <li key={j} className="flex items-start gap-1">
-                        <span className="text-xs" style={{ color: "var(--text-gray)" }}>–</span>
+                        <span className="text-xs" style={{ color: "var(--text-gray)" }}>・</span>
                         <span className="text-xs" style={{ color: "var(--text-gray)" }}>{s}</span>
                       </li>
                     ))}
