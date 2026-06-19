@@ -13,7 +13,7 @@ const SETTINGS = [
   { label: "音声認識を許可" },
   { label: "Wi-Fiまたはモバイル通信に接続" },
   { label: "周囲が騒がしい場所では、Siriが認識しづらい場合があります。" },
-  { label: "周囲の音が聞こえる状態で利用する" },
+  { label: "周囲の音が十分に聞こえる状態で利用する（イヤホン等は各都道府県の法令に従う）" },
 ];
 
 export default function SiriSettingsCard() {
@@ -76,13 +76,9 @@ export default function SiriSettingsCard() {
           </ul>
 
           {/* 安全注意文 */}
-          <div
-            className="rounded-[12px] px-4 py-3 text-xs leading-relaxed"
-            style={{ backgroundColor: "#FFF5F5", border: "1px solid #FFCFC0", color: "var(--text-gray)" }}
-          >
-            ⚠️ 周囲の音が聞こえる状態でご利用ください。<br />
-            <span className="block text-center">保存は音声、確認は停車後。</span>
-          </div>
+          <p className="text-xs leading-relaxed" style={{ color: "var(--text-gray)" }}>
+            ※安全のため、周囲の音が十分に聞こえる状態でご利用ください。イヤホン等をご利用の場合は、各都道府県の法令を守ってご利用ください。
+          </p>
         </div>
       )}
     </div>

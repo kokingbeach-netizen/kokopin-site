@@ -389,9 +389,9 @@ export default function Home() {
             <h2 className="text-2xl sm:text-3xl font-black tracking-tight" style={{ color: "var(--navy)" }}>
               こんな時に使える—<br />つまり手が離せない時
             </h2>
-            <p className="text-xs" style={{ color: "var(--text-gray)" }}>
-              ⚠️　周囲の音が聞こえる状態でご利用ください。<br />
-              保存は音声、確認は停車後。
+            <p className="text-xs leading-relaxed" style={{ color: "var(--text-gray)" }}>
+              ※安全のため、周囲の音が十分に聞こえる状態でご利用ください。<br />
+              イヤホン等をご利用の場合は、各都道府県の法令を守ってご利用ください。
             </p>
             <Image
               src="/images/こんな時に.webp"
@@ -586,7 +586,7 @@ export default function Home() {
               {/* 箇条書き */}
               <ul className="space-y-3 list-disc list-outside pl-4">
                 {[
-                  "移動中の画面操作や、運転中（自転車・バイク・キックボード・車など）に周囲の音が聞こえない状態でイヤホン等を使用することは、法令違反や事故の原因となるおそれがあります。",
+                  "安全のため、周囲の音が十分に聞こえる状態でご利用ください。イヤホン等をご利用の場合は、各都道府県の法令を守ってご利用ください。",
                   "本アプリは、必ず交通ルールを守り、安全な場所・安全な環境でご利用ください。",
                   "運転中に画面を見たり、手で操作したりしないでください。",
                   "本アプリの使用に起因する事故・違反・損害等について、開発者は責任を負いません。",
