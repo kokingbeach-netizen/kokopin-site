@@ -389,7 +389,8 @@ export default function Home() {
               こんな時に使える—<br />つまり手が離せない時
             </h2>
             <p className="text-xs" style={{ color: "var(--text-gray)" }}>
-              AirPodsなどのイヤホンを使用することでより快適に。
+              ⚠️　周囲の音が聞こえる状態でご利用ください。<br />
+              <span className="block text-center">保存は音声、確認は停車後。</span>
             </p>
             <Image
               src="/images/こんな時に.webp"
@@ -563,21 +564,37 @@ export default function Home() {
           <div className="max-w-2xl mx-auto">
             <div
               className="rounded-[28px] p-8 space-y-4"
-              style={{ backgroundColor: "var(--white)", border: "1px solid var(--border)" }}
+              style={{ backgroundColor: "#FFF5F5", border: "1px solid #FFCFC0" }}
             >
-              <div className="flex items-center gap-2">
-                <span className="text-xl">⚠️</span>
-                <h2 className="text-base font-black" style={{ color: "var(--navy)" }}>安全上の注意</h2>
+              {/* タイトル行 */}
+              <div className="flex items-center justify-between">
+                <div className="flex items-center gap-2">
+                  <span className="text-xl">🔺</span>
+                  <h2 className="text-lg font-black" style={{ color: "var(--navy)" }}>安全利用のお願い</h2>
+                </div>
+                <a href="/safety" className="text-xs font-bold underline underline-offset-2 hover:opacity-70 transition-opacity" style={{ color: "var(--coral)" }}>
+                  もう一度確認する
+                </a>
               </div>
-              {[
-                "運転中のアプリ操作は行わないでください。音声機能をご利用の場合も、周囲の安全を十分に確認してください。",
-                "本アプリはナビゲーションアプリではありません。移動時は実際の交通状況、道路標識、法令等を優先してください。",
-                "本アプリの利用により生じた損害について、運営者は一切責任を負いません。",
-              ].map((text, i) => (
-                <p key={i} className="text-xs leading-relaxed" style={{ color: "var(--text-gray)" }}>
-                  {text}
-                </p>
-              ))}
+
+              {/* サブ見出し */}
+              <p className="text-xs font-black" style={{ color: "var(--navy)" }}>
+                ⚠️ 安全なご利用のためのお願い
+              </p>
+
+              {/* 箇条書き */}
+              <ul className="space-y-3 list-disc list-outside pl-4">
+                {[
+                  "移動中の画面操作や、運転中（自転車・バイク・キックボード・車など）に周囲の音が聞こえない状態でイヤホン等を使用することは、法令違反や事故の原因となるおそれがあります。",
+                  "本アプリは、必ず交通ルールを守り、安全な場所・安全な環境でご利用ください。",
+                  "運転中に画面を見たり、手で操作したりしないでください。",
+                  "本アプリの使用に起因する事故・違反・損害等について、開発者は責任を負いません。",
+                ].map((text, i) => (
+                  <li key={i} className="text-xs leading-relaxed" style={{ color: "var(--text-gray)" }}>
+                    {text}
+                  </li>
+                ))}
+              </ul>
             </div>
           </div>
         </section>
