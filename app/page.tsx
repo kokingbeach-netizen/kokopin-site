@@ -387,7 +387,7 @@ export default function Home() {
         >
           <div className="max-w-2xl mx-auto space-y-6 text-center">
             <h2 className="text-2xl sm:text-3xl font-black tracking-tight" style={{ color: "var(--navy)" }}>
-              こんな時に使える—<br />つまり手が離せない時
+              こんな時に使える<span className="font-normal">—</span><br />つまり手が離せない時
             </h2>
             <p className="text-[10px] leading-relaxed" style={{ color: "var(--text-gray)" }}>
               ※安全のため、周囲の音が十分に聞こえる状態でご利用ください。<br />
@@ -551,7 +551,7 @@ export default function Home() {
                   </div>
                 ))}
               </div>
-              <p className="text-xs" style={{ color: "var(--text-gray)" }}>
+              <p className="text-[10px]" style={{ color: "var(--text-gray)" }}>
                 ※価格はApp Store公開時に変更となる場合があります。
               </p>
             </div>

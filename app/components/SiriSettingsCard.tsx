@@ -76,7 +76,7 @@ export default function SiriSettingsCard() {
           </ul>
 
           {/* 安全注意文 */}
-          <p className="text-xs leading-relaxed" style={{ color: "var(--text-gray)" }}>
+          <p className="text-[10px] leading-relaxed" style={{ color: "var(--text-gray)" }}>
             ※安全のため、周囲の音が十分に聞こえる状態でご利用ください。イヤホン等をご利用の場合は、各都道府県の法令を守ってご利用ください。
           </p>
         </div>

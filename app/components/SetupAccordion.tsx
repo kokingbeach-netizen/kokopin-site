@@ -35,7 +35,7 @@ export default function SetupAccordion() {
             <div className="space-y-1">
               <p className="text-base font-black" style={{ color: "var(--navy)" }}>位置情報</p>
               <p className="text-sm" style={{ color: "var(--text-gray)" }}>推奨：このAppの使用中のみ許可</p>
-              <p className="text-sm" style={{ color: "var(--text-gray)" }}>※ 常時許可は不要</p>
+              <p className="text-[10px]" style={{ color: "var(--text-gray)" }}>※ 常時許可は不要</p>
             </div>
           </div>
           <div className="flex items-start gap-4 p-5 bg-white">
