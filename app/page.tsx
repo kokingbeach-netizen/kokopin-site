@@ -389,7 +389,7 @@ export default function Home() {
             <h2 className="text-2xl sm:text-3xl font-black tracking-tight" style={{ color: "var(--navy)" }}>
               こんな時に使える—<br />つまり手が離せない時
             </h2>
-            <p className="text-xs leading-relaxed" style={{ color: "var(--text-gray)" }}>
+            <p className="text-[10px] leading-relaxed" style={{ color: "var(--text-gray)" }}>
               ※安全のため、周囲の音が十分に聞こえる状態でご利用ください。<br />
               イヤホン等をご利用の場合は、各都道府県の法令を守ってご利用ください。
             </p>
