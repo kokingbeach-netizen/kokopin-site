@@ -512,6 +512,9 @@ export default function Home() {
               <p className="text-sm leading-relaxed" style={{ color: "var(--text-gray)" }}>
                 現在のバージョンでは、外部サーバーへの送信は行っていません。
               </p>
+              <p className="text-sm leading-relaxed" style={{ color: "var(--text-gray)" }}>
+                位置情報とメモなどの軽量なデータのみを保存するため、容量をほとんど気にせずご利用いただけます。
+              </p>
               <Link
                 href="/privacy"
                 className="inline-block text-xs font-bold underline"
