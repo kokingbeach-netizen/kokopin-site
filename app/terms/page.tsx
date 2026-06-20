@@ -4,7 +4,7 @@ import Footer from "../components/Footer";
 import MarkdownContent from "../components/MarkdownContent";
 
 export const metadata = {
-  title: "利用規約 | KokoPin",
+  title: "利用規約 | ここピン",
 };
 
 export default function TermsPage() {

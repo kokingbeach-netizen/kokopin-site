@@ -4,7 +4,7 @@ import Footer from "../components/Footer";
 import MarkdownContent from "../components/MarkdownContent";
 
 export const metadata = {
-  title: "プライバシーポリシー | KokoPin",
+  title: "プライバシーポリシー | ここピン",
 };
 
 export default function PrivacyPage() {

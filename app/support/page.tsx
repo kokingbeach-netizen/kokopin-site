@@ -4,7 +4,7 @@ import Footer from "../components/Footer";
 import MarkdownContent from "../components/MarkdownContent";
 
 export const metadata = {
-  title: "サポート | KokoPin",
+  title: "サポート | ここピン",
 };
 
 export default function SupportPage() {

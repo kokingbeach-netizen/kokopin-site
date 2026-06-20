@@ -32,7 +32,7 @@ export default function SiriSettingsCard() {
             Siriの推奨設定
           </p>
           <p className="text-xs leading-relaxed" style={{ color: "var(--text-gray)" }}>
-            KokoPinはAppleのSiriを利用して動作します。<br />
+            ここピンはAppleのSiriを利用して動作します。<br />
             Siriが反応しない場合は、以下の推奨設定をご確認ください。
           </p>
           <button

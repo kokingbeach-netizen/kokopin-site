@@ -259,7 +259,7 @@ export default function Home() {
         <div className="px-5 h-14 flex items-center justify-between">
           <Image
             src="/images/Kokopinheader.png"
-            alt="ここピン! KokoPin"
+            alt="ここピン"
             width={1323}
             height={375}
             className="h-9 w-auto"
