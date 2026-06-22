@@ -444,8 +444,8 @@ export default function Home() {
               <SetupAccordion />
 
               {[
-                { step: 1, icon: "🎙️", title: "「Hey Siri ここピン」と言う",
-                  desc: "気になる場所があったらSiriに言う。" },
+                { step: 1, icon: "📍", title: "気になる場所を見つけたら",
+                  desc: "「Hey Siri ここピン」と話しかけるだけで現在地を保存できます。アプリを開いて、ホーム画面中央の「ここピン」ボタンをタップして保存することもできます。" },
                 { step: 2, icon: "💬", title: "メモを一言",
                   desc: "「どんな場所？」と聞かれたら、メモを言う。" },
                 { step: 3, icon: "📍", title: "位置とメモが自動保存",
