@@ -1,5 +1,9 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import { GoogleAnalytics } from "@next/third-parties/google";
+
+const gaId = process.env.NEXT_PUBLIC_GA_ID;
+const siteVerification = process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION;
 
 export const metadata: Metadata = {
   title: "ここピン — 声でMAPにピンしよう",
@@ -11,6 +15,9 @@ export const metadata: Metadata = {
     locale: "ja_JP",
     type: "website",
   },
+  verification: {
+    google: siteVerification || undefined,
+  },
 };
 
 export default function RootLayout({
@@ -18,7 +25,10 @@ export default function RootLayout({
 }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="ja" className="h-full">
-      <body className="min-h-screen">{children}</body>
+      <body className="min-h-screen">
+        {children}
+        {gaId ? <GoogleAnalytics gaId={gaId} /> : null}
+      </body>
     </html>
   );
 }

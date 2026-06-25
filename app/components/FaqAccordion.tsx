@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { trackEvent } from "@/lib/gtag";
 
 const FAQS = [
   {
@@ -58,7 +59,11 @@ export default function FaqAccordion() {
         >
           <button
             className="w-full flex items-center justify-between p-5 text-left"
-            onClick={() => setOpen(open === i ? null : i)}
+            onClick={() => {
+              const next = open === i ? null : i;
+              if (next !== null) trackEvent("faq_open", { question: faq.q });
+              setOpen(next);
+            }}
             aria-expanded={open === i}
           >
             <span className="text-sm font-bold pr-4" style={{ color: "var(--navy)" }}>
