@@ -286,11 +286,11 @@ export default function Home() {
           <HeroSlider />
 
           {/* ── コンテンツ（PC：2カラム / モバイル：縦積み） ── */}
-          <div className="px-5 sm:px-10 pt-10">
-            <div className="flex flex-col sm:flex-row items-center gap-8 sm:gap-10">
+          <div className="px-5 sm:px-10 pt-10 max-w-2xl mx-auto">
+            <div className="flex flex-col items-center gap-8">
 
-              {/* ── 左列：テキスト・CTA ── */}
-              <div className="flex flex-col items-center sm:items-start text-center sm:text-left gap-5 flex-1">
+              {/* ── コンテンツ ── */}
+              <div className="flex flex-col items-center text-center gap-5 w-full">
 
                 {/* ロゴ＋バッジ（モバイルのみ） */}
                 <div className="sm:hidden flex flex-col items-center gap-3 mx-auto">
@@ -336,7 +336,7 @@ export default function Home() {
                     <p className="text-2xl sm:text-3xl font-bold" style={{ color: "var(--text-dark)" }}>
                       後でアプリから保存した位置をMapで確認
                     </p>
-                    <div className="flex flex-wrap gap-2 justify-center sm:justify-start">
+                    <div className="flex flex-wrap gap-2 justify-center">
                       {[
                         { icon: "🍎", label: "Apple Maps対応" },
                         { icon: "🗺️", label: "Google Maps対応" },
@@ -360,7 +360,7 @@ export default function Home() {
 
                 {/* App Storeボタン */}
                 <div
-                  className="flex flex-col items-center sm:items-start gap-1 py-4 px-6 rounded-2xl cursor-not-allowed select-none w-full max-w-xs"
+                  className="flex flex-col items-center gap-1 py-4 px-6 rounded-2xl cursor-not-allowed select-none w-full max-w-xs"
                   style={{ backgroundColor: "#F0F2F5", border: "2px dashed var(--border)" }}
                   aria-disabled="true"
                 >
