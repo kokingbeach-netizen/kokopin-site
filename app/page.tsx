@@ -445,7 +445,7 @@ export default function Home() {
 
               {[
                 { step: 1, icon: "📍", title: "気になる場所を見つけたら",
-                  desc: "「Hey Siri ここピン」と言う。アプリホーム画面「ここピン」ロゴをタップでもOK。" },
+                  desc: "「Hey Siri」でSiriを起動し、「ここピン」と話しかけます。\n※アプリホーム画面の「ここピン」ロゴをタップしても保存できます。" },
                 { step: 2, icon: "💬", title: "メモを一言",
                   desc: "「どんな場所？」と聞かれたら、メモを言う。" },
                 { step: 3, icon: "📍", title: "位置とメモが自動保存",
@@ -473,7 +473,7 @@ export default function Home() {
                       <p className="text-base font-black" style={{ color: "var(--navy)" }}>
                         {item.icon} {item.title}
                       </p>
-                      <p className="text-sm leading-relaxed" style={{ color: "var(--text-gray)" }}>
+                      <p className="text-sm leading-relaxed whitespace-pre-line" style={{ color: "var(--text-gray)" }}>
                         {item.desc}
                       </p>
                     </div>
