@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import Footer from "./components/Footer";
 import FaqAccordion from "./components/FaqAccordion";
+import UpdateRoadmap from "./components/UpdateRoadmap";
 import SetupAccordion from "./components/SetupAccordion";
 import SiriSettingsCard from "./components/SiriSettingsCard";
 import HeroSlider from "./components/HeroSlider";
@@ -204,6 +205,7 @@ function RightSidebar() {
     { href: "#privacy",     label: "プライバシー" },
     { href: "#price",       label: "料金" },
     { href: "#faq",         label: "FAQ" },
+    { href: "#roadmap",     label: "アップデート予定" },
   ];
 
   return (
@@ -625,6 +627,25 @@ export default function Home() {
               </Link>
               。
             </p>
+          </div>
+        </section>
+
+        {/* ─────────────────────────────────────────────
+            SECTION 10 : アップデート予定
+        ───────────────────────────────────────────── */}
+        <section
+          id="roadmap"
+          className="px-5 sm:px-10 py-14"
+          style={{ backgroundColor: "var(--pale-bg)" }}
+        >
+          <div className="max-w-2xl mx-auto space-y-6">
+            <div className="space-y-1">
+              <p className="text-xs font-black tracking-widest uppercase" style={{ color: "var(--coral)" }}>Roadmap</p>
+              <h2 className="text-2xl sm:text-3xl font-black tracking-tight" style={{ color: "var(--navy)" }}>
+                今後のアップデート予定
+              </h2>
+            </div>
+            <UpdateRoadmap />
           </div>
         </section>
 
