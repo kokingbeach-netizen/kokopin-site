@@ -12,7 +12,7 @@ export default function TermsPage() {
 
   return (
     <div className="min-h-screen flex flex-col">
-      <Header />
+      <Header pageTitle="利用規約" />
       <main className="flex-1 max-w-2xl mx-auto w-full px-6 py-10">
         <MarkdownContent content={content} />
       </main>
