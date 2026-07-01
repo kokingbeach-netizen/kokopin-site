@@ -512,7 +512,7 @@ export default function Home() {
                 保存したデータは、お使いの端末内に保存されます。
               </p>
               <p className="text-sm leading-relaxed" style={{ color: "var(--text-gray)" }}>
-                現在のバージョンでは、外部サーバーへの送信は行っていません。
+                現在のバージョンでは、運営者のサーバーへの送信は行っていません。
               </p>
               <p className="text-sm leading-relaxed" style={{ color: "var(--text-gray)" }}>
                 位置情報とメモなどの軽量なデータのみを保存するため、容量をほとんど気にせずご利用いただけます。
