@@ -4,10 +4,10 @@ KokoPin（ここピン）のApp Store提出用公式サイトです。
 
 ## 技術構成
 
-- Next.js 15 (App Router)
+- Next.js 16 (App Router)
 - TypeScript
 - Tailwind CSS
-- Vercel デプロイ
+- 静的エクスポート（`output: "export"`）+ Cloudflare Pages デプロイ（Vercelは並行運用）
 
 ## ページ構成
 
@@ -39,7 +39,14 @@ npm run build     # 本番ビルド確認
 
 ## デプロイ
 
-Vercelに接続済みの場合、`main` ブランチへのpushで自動デプロイされます。
+本サイトは静的エクスポート（`next build` → `out/`）構成です。`main` ブランチへのpushで以下に自動デプロイされます。
+
+- **Cloudflare Pages**（本番: `kokopin.app` / `www.kokopin.app`）
+  - Build command: `npm run build`
+  - Output directory: `out`
+- **Vercel**（並行運用中の既存環境）
+
+`next/image` は静的エクスポートのためデフォルト最適化ローダーが使えず、`images.unoptimized: true` を設定しています（オリジナル画像をそのまま配信）。
 
 ## 環境変数
 
@@ -59,8 +66,8 @@ cp .env.local.example .env.local
 1. [Google Analytics](https://analytics.google.com/) でGA4プロパティを作成
 2. Measurement ID（`G-XXXXXXXXXX` 形式）を取得
 3. ローカル開発：`.env.local` に `NEXT_PUBLIC_GA_ID=G-XXXXXXXXXX` を追記
-4. 本番（Vercel）：Vercelダッシュボードの **Settings → Environment Variables** に同じ値を設定
-5. 設定後は再デプロイが必要です
+4. 本番：Cloudflare Pagesダッシュボードの **Settings → Environment Variables**、およびVercelダッシュボードの **Settings → Environment Variables** の両方に同じ値を設定（静的エクスポートのためビルド時に値が埋め込まれます）
+5. 設定後は各環境で再デプロイが必要です
 
 ### Google Search Console の設定方法
 

@@ -4,6 +4,22 @@ KokoPin 公式サイトの開発履歴です。
 
 ---
 
+## Ver1.3 — 2026-07-02
+
+**目的：** Vercel Hobby から Cloudflare Pages への移行対応
+
+### 静的エクスポート対応
+- `next.config.ts` に `output: "export"` を追加（App Router / Server Actions・API Routes・動的レンダリング未使用のため対応可能と診断）
+- `next/image` のデフォルト最適化ローダーは静的エクスポート非対応のため `images.unoptimized: true` を追加
+- `package.json` の `start` スクリプトを `next start` → `npx serve@latest out`（静的エクスポート下では `next start` が使えないため）
+
+### Cloudflare Pages 自動デプロイ確認
+- GitHub連携（本番ブランチ `main`、Build command `npm run build`、Output directory `out`）
+- フッターに一時テスト文言を追加 → push → 自動デプロイ → `kokopin.app` への反映を確認 → テスト文言を削除
+- `kokopin.app` / `www.kokopin.app` はActive・SSL enabled、Vercelは並行運用を継続
+
+---
+
 ## Ver1.2 — 2026-06-13
 
 **目的：** 運営者表記の統一・問い合わせ先の確定
