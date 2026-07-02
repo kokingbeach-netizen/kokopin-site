@@ -20,6 +20,7 @@ export default function Footer() {
           </Link>
         </div>
         <p className="text-xs" style={{ color: "var(--text-gray)" }}>© 2026 KokoPin. All rights reserved.</p>
+        <p className="text-[10px]" style={{ color: "var(--border)" }}>Cloudflare deployment test</p>
       </div>
     </footer>
   );
